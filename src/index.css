@@ -1,0 +1,65 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+
+/* tailwind dark mode enabled via comment */
+@import "tailwindcss";
+
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+/* theme colors */
+@theme {
+  --color-primary: rgba(182, 36, 0, 1);       /* oklch(0.62 0.18 29) */
+  --color-secondary: rgba(255, 58, 48, 1);    /* oklch(0.7 0.14 28) */
+  --color-accent: rgba(255, 36, 20, 1);       /* oklch(0.75 0.18 29) */
+  --color-neutral: rgba(255, 255, 255, 1);    /* oklch(0.98 0 0) */
+}
+
+@theme .dark {
+  --color-primary: rgba(153, 30, 2, 1);       /* oklch(0.6 0.16 29) */
+  --color-secondary: rgba(236, 52, 45, 1);    /* oklch(0.68 0.12 28) */
+  --color-accent: rgba(244, 33, 18, 1);       /* oklch(0.7 0.15 29) */
+  --color-neutral: rgba(255, 255, 255, 1);       /* oklch(0.1 0 0) */
+}
+
+/* Format Styles section Animation */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+  
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+
+/* styles.css for scrollable section*/
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+
