@@ -10,6 +10,7 @@ import SubscriptionPlans from '../components/SubscriptionPlans'
 import KnowMoreSection from '../components/KnowMoreSection'
 import BlogsSection from "../components/BlogSecton"
 import Feedback from '../components/Feedback'
+import ContentTeam from '../components/ContentTeam'
 
 export default function Home({ openPopup }) {
   return (
@@ -22,6 +23,7 @@ export default function Home({ openPopup }) {
       <ProcessSteps/>
       <FormatStyleBento/>
       <MembershipBenefits/>
+      <ContentTeam/>
       <Subsciption />
       <SubscriptionPlans/>
       <Feedback/>
