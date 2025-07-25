@@ -4,6 +4,24 @@ import CTAButton from "./CTAButton";
 import Bcurve from "../assets/blackcurve.png";
 import Wcurve from "../assets/white curve.webp"
 import circle from "../assets/canva_white_circle.png"
+import b1 from "../assets/b-1.png"
+import b2 from "../assets/b-2.png"
+import b3 from "../assets/b-3.png"
+import b4 from "../assets/b-4.png"
+import b5 from "../assets/b-5.png"
+import b6 from "../assets/b-6.png"
+import b7 from "../assets/b-7.png"
+import b8 from "../assets/b-8.png"
+import b9 from "../assets/b-9.png"
+import b10 from "../assets/b-10.png"
+import b11 from "../assets/b-11.png"
+import b12 from "../assets/b-12.png"
+import b13 from "../assets/b-13.png"
+import b14 from "../assets/b-14.png"
+import b15 from "../assets/b-15.png"
+import b16 from "../assets/b-16.png"
+import b17 from "../assets/b-17.png"
+import b18 from "../assets/b-18.png"
 const vertexShader = `
 attribute vec2 uv;
 attribute vec2 position;
@@ -58,10 +76,7 @@ export default function HeroSection({
   const ctnDom = useRef(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
   // Dummy brand logos (replace with real ones as needed)
-  const brandLogos = [
-        "Content Ideation", "Boltshift", "Biosynthesis", "BuildingBlocks", "AltShift",
-        "Clandestine", "Boltshift", "Biosynthesis", "BuildingBlocks", "AltShift"
-      ]
+  const brandLogos = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18 ]
 
   useEffect(() => {
     if (!ctnDom.current) return;
@@ -175,25 +190,33 @@ export default function HeroSection({
       </section>
 
       {/* Trusted by 100+ Brands Section (improved) */}
-      <section className="relative w-full bg-[#f5efea] dark:bg-black pb-12 md:pb-12 pt-12 md:pt-24 px-4 md:px-24 border-b-2 border-primary flex flex-col md:flex-row items-center md:items-stretch justify-between gap-8 md:gap-0">
-        <div className="flex flex-col items-start py-8 justify-center w-full md:w-auto md:pr-12 md:border-r-2 md:border-r-primary">
-          <span className="text-white text-3xl md:text-2xl font-semibold mb-1">Trusted By</span>
-          <span className="text-primary text-3xl md:text-2xl font-extrabold mb-1">100+ Brands</span>
-          <span className="text-white text-3xl md:text-2xl font-semibold">Across The Globe</span>
+      <section className="relative w-full bg-[#f5efea] dark:bg-black pb-8 md:pb-8 pt-12 md:pt-24 px-4 md:px-24 border-b-3 border-secondary flex flex-col md:flex-row items-center md:items-stretch justify-between gap-8 md:gap-0">
+        <div className="flex flex-col items-start py-8 justify-center w-full md:w-auto md:pr-12 md:border-r-3 md:border-r-secondary">
+          <span className="text-black dark:text-white text-3xl md:text-2xl font-semibold mb-1">Trusted By</span>
+          <span className="text-secondary text-3xl md:text-2xl font-extrabold mb-1">100+ Brands</span>
+          <span className="text-black dark:text-white text-3xl md:text-2xl font-semibold">Across The Globe</span>
         </div>
         {/* Infinite Scrolling Brand Logos */}
         <div className="flex-1 flex items-center min-w-0 w-full md:w-auto md:pl-12">
           <div className="relative overflow-hidden w-full">
-            <div className="flex gap-8 animate-scrollBrands items-center py-2">
-              {brandLogos.concat(brandLogos).map((logo, idx) => (
-                <img
-                  key={idx}
-                  src={`https://demoxml.com/wp/darkyn/wp-content/uploads/2025/03/${logo}.png`}
-                  alt={logo}
-                  className="h-12 w-fit md:h-16 object-cover"
-                  
-                />
-              ))}
+            <div className="flex gap-12 animate-scrollBrands items-center py-2">
+              {brandLogos.map((logo, idx) => (
+  <div
+  key={idx}
+  className="p-2 rounded-xl "
+  style={{
+    boxShadow: '0 6px 8px rgba(128, 128, 128, 0.4)' // light grey bottom shadow
+  }}
+>
+  <div
+    key={idx}
+    className="h-16 min-w-48 bg-center bg-no-repeat bg-cover rounded-xl"
+    style={{ backgroundImage: `url(${logo})` }}
+  />
+</div>
+
+))}
+
             </div>
           </div>
         </div>

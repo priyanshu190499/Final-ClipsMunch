@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
-import FAQ from "../assets/FAQ.png"
+import FAQ from "../assets/bg-1.webp"
 
 const tabs = ["About", "Subscription", "Service", "Process"];
 
@@ -45,7 +45,7 @@ export default function KnowMoreSection() {
                 key={tab}
                 className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                   activeTab === tab
-                    ? "bg-red-600 text-white shadow"
+                    ? "bg-secondary text-white shadow"
                     : "bg-neutral-200 text-black"
                 }`}
                 onClick={() => setActiveTab(tab)}

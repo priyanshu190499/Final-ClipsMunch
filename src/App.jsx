@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className="bg-neutral text-black dark:bg-black dark:text-white min-h-screen transition-colors">
+      <div className="bg-neutral max:w-[100vw] overflow-hidden text-black dark:bg-black dark:text-white min-h-screen transition-colors">
       
 
 

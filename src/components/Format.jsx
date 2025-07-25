@@ -42,23 +42,23 @@ const rightCards = [
 
 export default function FormatStyleBento() {
   return (
-    <section className="bg-gradient-to-br from-[#9e1e1e] to-[#d42c2c] py-12 px-4 md:px-0 text-white">
+    <section className="bg-gradient-to-b from-primary to-secondary py-16 px-4 md:px-0 text-white" >
       {/* Title */}
       <h2 className="text-center text-2xl md:text-4xl font-bold mb-10">
         Choose Your <span className="italic font-extrabold underline decoration-white/60">Format / Style</span>
       </h2>
 
       {/* Two-column bento layout for desktop, stacked for mobile */}
-      <div className="flex flex-col lg:flex-row gap-8 max-w-5xl mx-auto">
+      <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto">
         {/* Left Section (60%) */}
         <div className="w-full lg:w-[60%] flex flex-col gap-6">
           {/* Large card */}
-          <div className="rounded-2xl p-6 bg-gradient-to-br from-[#d32121] to-[#5c0000] shadow-md min-h-[140px] flex flex-col justify-end">
+          <div className="rounded-2xl p-6 bg-gradient-to-br from-[#d32121] to-[#5c0000] shadow-md min-h-[200px] flex flex-col justify-end">
             <h3 className="text-2xl font-bold mb-1">{leftCards[0].title}</h3>
             <p className="text-lg text-white/90">{leftCards[0].desc}</p>
           </div>
           {/* 2x2 grid of small cards, heights adjusted for alignment */}
-          <div className="grid grid-cols-2 gap-6 h-[300px]">
+          <div className="grid grid-cols-2 gap-6 h-[400px]">
             {leftCards.slice(1).map((item, i) => (
               <div key={i} className="rounded-2xl p-6 bg-gradient-to-br from-[#d32121] to-[#5c0000] shadow-md h-full flex flex-col justify-end">
                 <h3 className="text-lg font-bold mb-1">{item.title}</h3>

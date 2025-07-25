@@ -6,7 +6,7 @@ const reasons = [
   "A Deep dive on our case studies & success of our clients.",
   "Special Discounts as well Free Upgrades on Showup.",
 ]
-
+import bg from "../assets/bg-1.webp"
 export default function WhyBookCall() {
   return (
     <section className="bg-gradient-to-b from-[#7c0e0e] to-[#f22929] py-16 px-4 md:px-10 text-white">
@@ -33,7 +33,7 @@ export default function WhyBookCall() {
           {/* 📷 Replace src with actual asset path */}
           <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-md relative">
             <img
-              src="/* BOOK_CALL_IMAGE */"
+              src={bg}
               alt="Book a call"
               className="w-full object-cover"
             />

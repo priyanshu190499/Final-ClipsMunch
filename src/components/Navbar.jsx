@@ -17,12 +17,12 @@ export default function Navbar({ openPopup }) {
   return (
     <>
       {/* Top border */}
-      <div className="h-[35px] bg-primary w-full flex justify-center">
+      <div className="h-[35px] bg-secondary w-full flex justify-center">
        
        
          
             <span  className="inline-flex  items-center gap-3 mx-4">
-             <span className="bg-primary py-2 text-neutral text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+             <span className=" py-2 text-neutral text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg">
   GET 15% OFF WITH COUPON CODE: 15 JULY 2025 - LIMITED TIME OFFER!
 </span>
 
@@ -33,7 +33,7 @@ export default function Navbar({ openPopup }) {
       
       </div>
 
-      <nav className="flex items-center justify-between p-4 px-6 md:px-10 bg-neutral text-black dark:text-white dark:bg-black transition-all duration-300 relative z-50">
+      <nav className="flex items-center justify-between p-4 px-6 md:px-24 bg-neutral text-black dark:text-white dark:bg-black transition-all duration-300 relative z-50">
 
         {/* Logo */}
         <div className="flex items-center h-10 select-none">
@@ -41,7 +41,7 @@ export default function Navbar({ openPopup }) {
           <img
             src={logoDark}
             alt="ClipMunch Logo"
-            className="block dark:hidden h-30 w-auto object-contain"
+            className="block dark:hidden h-10 w-auto object-contain"
             draggable="false"
           />
           <img
@@ -58,7 +58,7 @@ export default function Navbar({ openPopup }) {
             <li key={item}>
               <a
                 href="#"
-                className="hover:text-primary transition-colors"
+                className="hover:text-secondary transition-colors"
               >
                 {item}
               </a>
@@ -70,7 +70,7 @@ export default function Navbar({ openPopup }) {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <button
-            className="hidden md:inline-block bg-primary hover:brightness-110 text-white font-semibold px-5 py-2 rounded-full transition-all"
+            className="hidden md:inline-block bg-secondary hover:brightness-110 text-white font-semibold px-5 py-2 rounded-full transition-all"
             onClick={openPopup}
           >
             SCHEDULE A CALL
@@ -78,7 +78,7 @@ export default function Navbar({ openPopup }) {
 
           {/* Hamburger Button (md and below) */}
           <button
-            className="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-primary text-white relative transition-all z-[60]"
+            className="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-white relative transition-all z-[60]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className={`block absolute w-5 h-[2px] bg-white transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1.5'}`} />
@@ -101,7 +101,7 @@ export default function Navbar({ openPopup }) {
         <ul className="flex flex-col gap-6 p-6 text-lg font-semibold tracking-wide">
           {['OUR SERVICE', 'PORTFOLIO', 'RESOURCES', 'PRICING', 'WHY US'].map((item) => (
             <li key={item}>
-              <a href="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">
+              <a href="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-secondary transition-colors">
                 {item}
               </a>
             </li>
@@ -114,7 +114,7 @@ export default function Navbar({ openPopup }) {
               openPopup()
               setMobileMenuOpen(false)
             }}
-            className="w-full mt-4 bg-primary text-white rounded-full py-3 text-center hover:brightness-110 transition-all"
+            className="w-full mt-4 bg-secondary text-white rounded-full py-3 text-center hover:brightness-110 transition-all"
           >
             SCHEDULE A CALL
           </button>
