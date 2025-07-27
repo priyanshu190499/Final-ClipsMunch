@@ -52,15 +52,15 @@ export default function Subscription() {
         Who’s This <span className="italic underline">Subscription For</span>
       </h2>
 
-      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {subscriptionData.map((item, index) => (
           <div key={index} className="border-8 border-secondary rounded-xl">
             <div
             
-            className="bg-white rounded-xl p-3 border-8 h-full border-primary shadow-md hover:shadow-xl transition text-left flex flex-col items-center justify-between"
+            className="bg-white rounded-xl p-3 border-8 h-full border-primary shadow-md hover:shadow-xl transition text-left flex flex-col items-center justify-between gap-6"
           >
             {/* 💡 IMAGE placeholder */}
-            <div className=" w-36 h-48">
+            <div className=" w-36 h-36">
               <img
                 src={item.image}
                 alt={item.title}

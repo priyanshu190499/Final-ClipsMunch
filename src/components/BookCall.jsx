@@ -6,10 +6,10 @@ const reasons = [
   "A Deep dive on our case studies & success of our clients.",
   "Special Discounts as well Free Upgrades on Showup.",
 ]
-import bg from "../assets/bg-1.webp"
+import bg from "../assets/BAC.jpeg"
 export default function WhyBookCall() {
   return (
-    <section className="bg-gradient-to-b from-[#7c0e0e] to-[#f22929] py-16 px-4 md:px-10 text-white">
+    <section className="bg-gradient-to-b from-primary to-secondary py-16 px-4 md:px-10 text-white">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-12">
         Why You Should Book the Call?
       </h2>
@@ -20,41 +20,57 @@ export default function WhyBookCall() {
           {reasons.map((text, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 bg-gradient-to-r from-[#8e0e0e] to-[#c82929] rounded-xl px-5 py-4 border border-white"
+              className="flex items-center gap-6 bg-gradient-to-r from-[#7c0e0e] to-[#f22929] rounded-xl px-5 py-2 shadow-secondary"
             >
-              <div className="w-4 h-4 mt-1 bg-white rounded-full" />
-              <p className="text-sm">{text}</p>
+              <div>
+               <div className="w-4 h-4 bg-white rounded-full" />
+              </div>
+             
+              <p className="text-xl font-bold">{text}</p>
             </div>
           ))}
         </div>
 
         {/* Right Image + Buttons */}
-        <div className="flex flex-col items-center gap-6 flex-1">
-          {/* 📷 Replace src with actual asset path */}
-          <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-md relative">
+                {/* Right Image + Buttons */}
+        <div className="px-0 md:px-12 lg:px-24 flex flex-col items-center gap-6 flex-1 w-full">
+          {/* Image + Overlay */}
+          <div className="w-full rounded-xl overflow-hidden shadow-md relative min-h-[180px] border-6 border-primary">
             <img
               src={bg}
               alt="Book a call"
-              className="w-full object-cover"
+              className="w-full object-cover min-h-[180px] max-h-[320px]"
+              style={{ objectFit: "cover" }}
             />
-            <span className="absolute inset-0 flex items-center justify-center text-white font-bold text-lg">
+            <span className="absolute p-4 inset-0 flex items-end justify-center text-white font-bold text-2xl md:text-4xl">
               BOOK A CALL NOW
             </span>
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col items-center gap-4 w-full">
-            <button className="bg-white text-black px-6 py-3 rounded-full font-semibold w-3/4 border border-black">
-              CALL US
-            </button>
-            <button className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold w-3/4 shadow-lg">
-              WHATSAPP NOW
-            </button>
-            <button className="bg-white text-black px-6 py-3 rounded-full font-semibold w-3/4 border border-black">
-              MAIL US
-            </button>
+          <div className="flex flex-col items-center gap-2 w-full">
+            <div className="w-full">
+              <button className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-primary">
+                CALL US
+              </button>
+            </div>
+
+            <div className="w-full flex justify-center">
+              <button className="bg-green-500 text-lg md:text-2xl lg:text-3xl text-white w-full py-4 rounded-3xl font-extrabold shadow-primary">
+                WHATSAPP NOW
+              </button>
+            </div>
+
+            <div className="w-full flex justify-end">
+              <button className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-secondary">
+                MAIL US
+              </button>
+            </div>
           </div>
         </div>
+
+
+
       </div>
     </section>
   )

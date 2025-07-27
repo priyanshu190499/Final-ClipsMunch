@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className="bg-neutral max:w-[100vw] overflow-hidden text-black dark:bg-black dark:text-white min-h-screen transition-colors">
+      <div className="bg-neutral max:w-[100vw]  text-black dark:bg-black dark:text-white min-h-screen transition-colors">
       
 
 
@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
-        {/* {showPopup && <PopupForm onClose={() => setShowPopup(false)} />} */}
+        {showPopup && <PopupForm onClose={() => setShowPopup(false)} />}
       </div>
     </Router>
   )

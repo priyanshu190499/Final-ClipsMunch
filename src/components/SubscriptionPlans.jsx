@@ -96,40 +96,42 @@ export default function SubscriptionPlans() {
           {plans.map((plan, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-b from-red-500 to-red-700 text-white p-2 rounded-xl flex flex-col justify-between shadow-md"
+              className="bg-gradient-to-b from-red-500 to-red-700 text-white rounded-xl flex flex-col justify-between shadow-md h-full"
             >
               <div>
-                <span className="text-xs font-semibold bg-white/20 px-2 py-1 rounded-full inline-block mb-2 uppercase tracking-wide">
-                  {plan.tag}
-                </span>
-                <h3 className="text-xl font-bold">{plan.title}</h3>
-                <div className="mt-2 text-3xl font-bold">
-                  {plan.price}
-                  <span className="text-base font-medium">{plan.frequency}</span>
+                <div className="p-8">
+                  <span className="text-xs font-bold bg-white text-secondary px-4 py-1 rounded-bl-2xl rounded-tr-2xl border border-gray-500 inline-block mb-2 uppercase tracking-wide">
+                    {plan.tag}
+                  </span>
+                  <h3 className="text-2xl font-bold">{plan.title}</h3>
+                  <div className="mt-8 ">
+                    <p className="text-3xl font-extralight">FROM</p>
+                    <p className="text-5xl font-bold">
+                      {plan.price} <span className="text-sm font-medium">{plan.frequency}</span>
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-4 bg-white text-red-700 font-semibold text-center py-2 rounded">
+                <div className="mt-4 bg-white text-sm text-black font-semibold text-center py-2 border border-primary shadow-primary">
                   {plan.requests}
                 </div>
-
-                <ul className="mt-6 space-y-3 text-sm text-white">
-                  {plan.features.map((feat, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="mt-1 text-red-200">•</span>
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="p-8 ">
+                  <ul className="mt-6 space-y-3 text-sm text-white">
+                    {plan.features.map((feat, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-1 text-red-200">•</span>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-
-              <button
-                className={`mt-6 w-full text-center py-2 font-semibold rounded transition-colors ${
-                  plan.cta === "Talk To Us"
-                    ? "bg-white text-red-700 hover:bg-gray-100"
-                    : "bg-white text-red-600 hover:bg-gray-100"
-                }`}
-              >
-                {plan.cta} →
-              </button>
+              <div className="p-1 mt-auto rounded-b-xl">
+                <button
+                  className="w-full py-4 text-xl text-secondary text-center   font-bold transition-colors rounded-b-xl bg-white"
+                >
+                  {plan.cta} →
+                </button>
+              </div>
             </div>
           ))}
         </div>

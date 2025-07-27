@@ -1,15 +1,29 @@
+import b1 from "../assets/edt1.jpg"
+import b2 from "../assets/edt2.jpeg"
+import b3 from "../assets/edt3.jpeg"
+import b4 from "../assets/edt4.jpg"
+import b5 from "../assets/edt5.jpg"
+
 const blogs = [
   {
     title: "How Agencies Save Time and Maximize ROI Using ClipsMunch",
-    image: "/images/blog1.jpg", // Replace with real paths
+    image: b1,
   },
   {
     title: "What Types of Content Can ClipsMunch Edit for Your Business?",
-    image: "/images/blog2.jpg",
+    image: b2,
   },
   {
     title: "5 Reasons How You Can Save $3,000/Month with ClipsMunch",
-    image: "/images/blog3.jpg",
+    image: b3,
+  },
+  {
+    title: "What Types of Content Can ClipsMunch Edit for Your Business?",
+    image: b4,
+  },
+  {
+    title: "5 Reasons How You Can Save $3,000/Month with ClipsMunch",
+    image: b5,
   },
 ];
 
@@ -22,10 +36,13 @@ export default function BlogsSection() {
           <span className="text-red-600">Read Our</span> Blogs
         </h2>
 
-        {/* Blog Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Horizontal Scrollable Blog Cards */}
+        <div className="flex gap-8 overflow-x-auto scrollbar-hide pb-4">
           {blogs.map((blog, idx) => (
-            <div key={idx} className="group cursor-pointer">
+            <div
+              key={idx}
+              className="group cursor-pointer min-w-[280px] max-w-[340px] flex-shrink-0"
+            >
               <div className="relative overflow-hidden rounded-md">
                 <img
                   src={blog.image}

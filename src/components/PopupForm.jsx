@@ -22,15 +22,22 @@ export default function PopupForm({ onClose }) {
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    // TODO: Replace with actual endpoint
-    await fetch('https://script.google.com/macros/s/AKfycbw-EhAgo1W8iXKcZ53Z0208_-uH_NZkZbwJFSJ3ur26_51WFOtnTgLZCvsgdjRZ98nr/exec', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
-    onClose()
-  }
+  e.preventDefault();
+
+  const formPayload = new FormData();
+  Object.entries(formData).forEach(([key, value]) => {
+    formPayload.append(key, value);
+  });
+
+  await fetch('https://script.google.com/macros/s/AKfycbzXZ0jN0c0FAvaeItGCDScLPsllMymgCJ8V2eqDwFmuLuOCNFAkx3HJeruHlOdqh7m6UA/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formPayload,
+  });
+
+  onClose();
+};
+
 
   return (
     <div
