@@ -4,7 +4,7 @@ import AtGlance from '../components/AtGlance'
 import Subsciption from '../components/Subsciption'
 import FormatStyleBento from "../components/Format"
 import MembershipBenefits from '../components/MembershipBenefits'
-import WhyBookCall from '../components/BookCall'
+import BookCall from '../components/BookCall'
 import ProcessSteps from '../components/ProcessSteps'
 import SubscriptionPlans from '../components/SubscriptionPlans'
 import KnowMoreSection from '../components/KnowMoreSection'
@@ -27,7 +27,7 @@ export default function Home({ openPopup }) {
       <Subsciption />
       <SubscriptionPlans/>
       <Feedback/>
-      <WhyBookCall/>
+      <BookCall/>
       <KnowMoreSection/>
       <BlogsSection/>
       

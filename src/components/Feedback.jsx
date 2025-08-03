@@ -6,7 +6,7 @@ const testimonials = [
     name: "Avinash Singh",
     role: "Founder @ Luminance",
     message:
-      "Great result and the communication with the seller was amazing. 10/10 recommend their service! I have worked with them for more than 15 videos and they have always done a great job while also being super responsive all the time!",
+      "Great result and the communication with the seller was amazing.",
     rating: 5,
   },
   {
@@ -112,14 +112,14 @@ export default function TestimonialSlider() {
 
         {/* Main Card Container */}
         <div className="flex flex-col items-center">
-          <div className=" p-8 flex flex-col lg:flex-row gap-8 w-full items-stretch justify-center rounded-[60px] overflow-hidden bg-transparent">
+          <div className="  flex flex-col lg:flex-row gap-8 w-full items-stretch justify-center overflow-hidden bg-transparent">
             {/* Fixed Rating Box */}
             <div
               className="bg-white dark:bg-black border-4 border-red-500 rounded-[40px] p-10 flex flex-col items-center shadow-lg justify-center"
               style={{
                 flex: "1 1 20%",
-                minWidth: "220px",
-                maxWidth: "320px",
+                minWidth: "320px",
+                maxWidth: "420px",
                 minHeight: "340px",
                 height: "100%",
               }}

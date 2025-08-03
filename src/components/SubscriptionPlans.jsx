@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function SubscriptionPlans() {
   const plans = [
     {
@@ -94,8 +96,12 @@ export default function SubscriptionPlans() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 + idx * 0.12 }}
               className="bg-gradient-to-b from-red-500 to-red-700 text-white rounded-xl flex flex-col justify-between shadow-md h-full"
             >
               <div>
@@ -127,12 +133,12 @@ export default function SubscriptionPlans() {
               </div>
               <div className="p-1 mt-auto rounded-b-xl">
                 <button
-                  className="w-full py-4 text-xl text-secondary text-center   font-bold transition-colors rounded-b-xl bg-white"
+                  className="w-full py-4 text-xl text-secondary text-center font-bold transition-colors rounded-b-xl bg-white"
                 >
                   {plan.cta} →
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

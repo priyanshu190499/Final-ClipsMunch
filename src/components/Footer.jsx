@@ -2,21 +2,19 @@ import logoLight from "../assets/MUNCH_WHITE.png"
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white pt-20">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-start">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-start gap-8">
         {/* Logo */}
-        <div className="">
-          
-             <img
-                        src={logoLight}
-                        alt="ClipMunch Logo"
-                        className=" h-40 w-auto"
-                        draggable="false"
-                      />
-         
+        <div className="flex justify-center lg:justify-start w-full lg:w-auto mb-8 lg:mb-0">
+          <img
+            src={logoLight}
+            alt="ClipMunch Logo"
+            className="h-20 w-auto"
+            draggable="false"
+          />
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-wrap gap-8 text-sm font-light tracking-wider uppercase">
+        <div className="flex flex-wrap gap-4 sm:gap-8 text-sm font-light tracking-wider uppercase justify-center lg:justify-end w-full lg:w-auto">
           <a href="#" className="hover:text-white text-gray-400">
             MunchClip
           </a>
@@ -43,7 +41,7 @@ export default function Footer() {
           </p>
 
           {/* Social Icons */}
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
             {["instagram", "facebook", "twitter"].map((platform) => (
               <a
                 key={platform}

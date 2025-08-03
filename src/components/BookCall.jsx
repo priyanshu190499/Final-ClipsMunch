@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import bg from "../assets/BAC.jpeg";
+
 const reasons = [
   "It’s Free but super valuable if you’re just starting out or stucked in Growth.",
   "Experts advise, suggestions and feedbacks for content lead growth.",
@@ -5,9 +8,15 @@ const reasons = [
   "Clear idea of results you can achieve with ClipsMunch.",
   "A Deep dive on our case studies & success of our clients.",
   "Special Discounts as well Free Upgrades on Showup.",
-]
-import bg from "../assets/BAC.jpeg"
-export default function WhyBookCall() {
+];
+
+export default function BookCall() {
+  // Handlers for WhatsApp and Email buttons
+  const handleWhatsapp = () => {
+    window.open("https://wa.me/918448677742", "_blank");
+  };
+
+  
   return (
     <section className="bg-gradient-to-b from-primary to-secondary py-16 px-4 md:px-10 text-white">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-12">
@@ -18,60 +27,90 @@ export default function WhyBookCall() {
         {/* Left Reason List */}
         <div className="flex flex-col gap-4 flex-1">
           {reasons.map((text, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
               className="flex items-center gap-6 bg-gradient-to-r from-[#7c0e0e] to-[#f22929] rounded-xl px-5 py-2 shadow-secondary"
             >
               <div>
-               <div className="w-4 h-4 bg-white rounded-full" />
+                <div className="w-4 h-4 bg-white rounded-full" />
               </div>
-             
               <p className="text-xl font-bold">{text}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Right Image + Buttons */}
-                {/* Right Image + Buttons */}
         <div className="px-0 md:px-12 lg:px-24 flex flex-col items-center gap-6 flex-1 w-full">
           {/* Image + Overlay */}
-          <div className="w-full rounded-xl overflow-hidden shadow-md relative min-h-[180px] border-6 border-primary">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="w-full rounded-xl overflow-hidden shadow-md relative min-h-[180px] border-6 border-primary"
+          >
             <img
               src={bg}
               alt="Book a call"
               className="w-full object-cover min-h-[180px] max-h-[320px]"
               style={{ objectFit: "cover" }}
             />
-            <span className="absolute p-4 inset-0 flex items-end justify-center text-white font-bold text-2xl md:text-4xl">
+            <span className="absolute p-4 inset-0 flex items-end justify-center text-white font-bold text-2xl md:text-4xl hover:bg-black/60">
               BOOK A CALL NOW
             </span>
-          </div>
+          </motion.div>
 
           {/* Buttons */}
           <div className="flex flex-col items-center gap-2 w-full">
-            <div className="w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="w-full"
+            >
               <button className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-primary">
                 CALL US
               </button>
-            </div>
+            </motion.div>
 
-            <div className="w-full flex justify-center">
-              <button className="bg-green-500 text-lg md:text-2xl lg:text-3xl text-white w-full py-4 rounded-3xl font-extrabold shadow-primary">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="w-full flex justify-center"
+            >
+              <button
+                className="bg-green-500 text-lg md:text-2xl lg:text-3xl text-white w-full py-4 rounded-3xl font-extrabold shadow-primary"
+                onClick={handleWhatsapp}
+              >
                 WHATSAPP NOW
               </button>
-            </div>
+            </motion.div>
 
-            <div className="w-full flex justify-end">
-              <button className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-secondary">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="w-full flex justify-end"
+            >
+              <a
+                href="mailto:priyanshoochoudhary@gmail.com"
+                className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-secondary flex items-center justify-center"
+                style={{ textDecoration: "none" }}
+              >
                 MAIL US
-              </button>
-            </div>
+              </a>
+            </motion.div>
           </div>
         </div>
-
-
-
       </div>
     </section>
-  )
+  );
 }

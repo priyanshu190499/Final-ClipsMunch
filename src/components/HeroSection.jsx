@@ -1,27 +1,29 @@
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 import CTAButton from "./CTAButton";
 import Bcurve from "../assets/blackcurve.png";
-import Wcurve from "../assets/white curve.webp"
-import circle from "../assets/canva_white_circle.png"
-import b1 from "../assets/b-1.png"
-import b2 from "../assets/b-2.png"
-import b3 from "../assets/b-3.png"
-import b4 from "../assets/b-4.png"
-import b5 from "../assets/b-5.png"
-import b6 from "../assets/b-6.png"
-import b7 from "../assets/b-7.png"
-import b8 from "../assets/b-8.png"
-import b9 from "../assets/b-9.png"
-import b10 from "../assets/b-10.png"
-import b11 from "../assets/b-11.png"
-import b12 from "../assets/b-12.png"
-import b13 from "../assets/b-13.png"
-import b14 from "../assets/b-14.png"
-import b15 from "../assets/b-15.png"
-import b16 from "../assets/b-16.png"
-import b17 from "../assets/b-17.png"
-import b18 from "../assets/b-18.png"
+import Wcurve from "../assets/white curve.webp";
+import circle from "../assets/canva_white_circle.png";
+import b1 from "../assets/b-1.png";
+import b2 from "../assets/b-2.png";
+import b3 from "../assets/b-3.png";
+import b4 from "../assets/b-4.png";
+import b5 from "../assets/b-5.png";
+import b6 from "../assets/b-6.png";
+import b7 from "../assets/b-7.png";
+import b8 from "../assets/b-8.png";
+import b9 from "../assets/b-9.png";
+import b10 from "../assets/b-10.png";
+import b11 from "../assets/b-11.png";
+import b12 from "../assets/b-12.png";
+import b13 from "../assets/b-13.png";
+import b14 from "../assets/b-14.png";
+import b15 from "../assets/b-15.png";
+import b16 from "../assets/b-16.png";
+import b17 from "../assets/b-17.png";
+import b18 from "../assets/b-18.png";
 const vertexShader = `
 attribute vec2 uv;
 attribute vec2 position;
@@ -75,8 +77,7 @@ export default function HeroSection({
 }) {
   const ctnDom = useRef(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
-  // Dummy brand logos (replace with real ones as needed)
-  const brandLogos = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18 ]
+  const brandLogos = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18];
 
   useEffect(() => {
     if (!ctnDom.current) return;
@@ -168,25 +169,60 @@ export default function HeroSection({
           {...rest}
         />
 
-        
-
         {/* Hero Content Overlay */}
-        <div className="absolute top-1/6 z-10 flex flex-col items-start justify-center text-left px-4 md:px-24 pt-16 md:pt-24 pb-10 md:pb-20 w-full max-w-5xl">
-          <h3 className="text-lg md:text-2xl font-medium text-white drop-shadow-sm mb-2" style={{textShadow:'0 2px 8px rgba(0,0,0,0.18)'}}>One Subscription For Your All Video Editing Requirements</h3>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-md" style={{textShadow:'0 4px 16px rgba(0,0,0,0.22)'}}>Your Video First<br />Content Partner</h1>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="absolute top-1/6 z-10 flex flex-col items-start justify-center text-left px-4 md:px-24 pt-16 md:pt-24 pb-10 md:pb-20 w-full max-w-5xl"
+        >
+          <h3 className="text-lg md:text-2xl font-medium text-white drop-shadow-sm mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
+            <Typewriter
+              options={{
+                strings: [
+                  "One Subscription For Your All Video Editing Requirements",
+                  "Unlimited Edits. Unlimited Creativity.",
+                  "Scale Your Brand With ClipsMunch."
+                ],
+                autoStart: true,
+                loop: true,
+                delay: 40,
+                deleteSpeed: 30,
+                pauseFor: 1800,
+              }}
+            />
+          </h3>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-md"
+            style={{ textShadow: '0 4px 16px rgba(0,0,0,0.22)' }}
+          >
+            Your Video First<br />Content Partner
+          </motion.h1>
           <div className="flex flex-col sm:flex-row gap-4 items-start justify-start mb-8">
             {/* Schedule a Call Button with glowing dot */}
-           <CTAButton openPopup={ openPopup }/>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.8 }}
+            >
+              <CTAButton openPopup={openPopup} />
+            </motion.div>
             {/* Portfolio Button */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 1.1 }}
               href="#portfolio"
               className="px-6 py-3 rounded-full border-2 border-white text-white font-bold text-base md:text-lg shadow-md hover:bg-white hover:text-red-600 active:bg-red-100 transition-all focus:outline-none"
-              style={{boxShadow:'0 2px 12px 0 rgba(0,0,0,0.10)'}}
+              style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.10)' }}
             >
               PORTFOLIO
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Trusted by 100+ Brands Section (improved) */}
@@ -201,33 +237,30 @@ export default function HeroSection({
           <div className="relative overflow-hidden w-full">
             <div className="flex gap-12 animate-scrollBrands items-center py-2">
               {brandLogos.map((logo, idx) => (
-  <div
-  key={idx}
-  className="p-2 rounded-xl "
-  style={{
-    boxShadow: '0 6px 8px rgba(128, 128, 128, 0.4)' // light grey bottom shadow
-  }}
->
-  <div
-    key={idx}
-    className="h-16 min-w-48 bg-center bg-no-repeat bg-cover rounded-xl"
-    style={{ backgroundImage: `url(${logo})` }}
-  />
-</div>
-
-))}
-
+                <div
+                  key={idx}
+                  className="p-2 rounded-xl "
+                  style={{
+                    boxShadow: '0 6px 8px rgba(128, 128, 128, 0.4)' // light grey bottom shadow
+                  }}
+                >
+                  <div
+                    key={idx}
+                    className="h-16 min-w-48 bg-center bg-no-repeat bg-cover rounded-xl"
+                    style={{ backgroundImage: `url(${logo})` }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-       
+
         <div className="absolute z-11  bottom-[100%] right-[15%] ">
-          <div className=" z-10 "> 
-          <img src={Bcurve} alt="curve" className="hidden dark:block"/>
-          <img src={Wcurve} alt="curve" className="block dark:hidden"/>
-        </div>
-          <img src={circle} alt="circle" className="absolute top-3 left-[24.5%] animate-spin-slow"/>
-           
+          <div className=" z-10 ">
+            <img src={Bcurve} alt="curve" className="hidden dark:block" />
+            <img src={Wcurve} alt="curve" className="block dark:hidden" />
+          </div>
+          <img src={circle} alt="circle" className="absolute top-3 left-[24.5%] animate-spin-slow" />
         </div>
         <style>{`
           @keyframes scrollBrands {
@@ -242,5 +275,3 @@ export default function HeroSection({
     </>
   );
 }
-
-

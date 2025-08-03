@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from "framer-motion"
 import bv1 from "../assets/bv1.avif"
 import bv2 from "../assets/bv2.jpeg"
 import bv3 from "../assets/bv3.avif"
@@ -50,18 +51,34 @@ export default function FormatStyles() {
   const [selectedVideo, setSelectedVideo] = useState(null)
 
   return (
-    <section className="bg-neutral dark:bg-black text-center py-12  transition-colors relative" >
+    <motion.section
+      className="bg-neutral dark:bg-black text-center py-12 transition-colors relative"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl mx-auto">
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl mx-auto"
+      >
         <span className="text-secondary text-2xl md:text-3xl font-bold">Our Clients Shared Their Love</span> For Our Work
-      </h2>
+      </motion.h2>
 
       {/* Image Carousel */}
       <div className="mt-10 overflow-x-auto scrollbar-hide ">
         <div className="flex gap-8 justify-start min-h-[380px] md:min-h-[510px] pl-8 pr-8 ">
           {images.map((src, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.15 + i * 0.08 }}
               className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0 border-2 border-gray-500 relative cursor-pointer"
               onClick={() => setSelectedVideo(videos[i])}
             >
@@ -76,32 +93,54 @@ export default function FormatStyles() {
                   <div className="w-0 h-0 border-l-[18px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Title - 2 */}
-      <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl pt-12 mx-auto">
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl pt-12 mx-auto "
+      >
         <span className="text-secondary text-2xl md:text-3xl font-bold">Social Video Content</span> is the New Fuel to Fire Your Brand’s Organic Growth
-      </h2>
+      </motion.h2>
 
       {/* Tags */}
-      <div className='flex justify-center items-center'>
-        <div className="mt-10 max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-lg font-semibold">
+      <div className='flex justify-center items-center px-8'>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-10 max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-lg font-semibold"
+        >
           {tags.map((tag, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.8 + i * 0.05 }}
               className="border-5 min-w-[180px] text-start border-secondary px-4 py-3 rounded-2xl transition-all text-black dark:text-white"
             >
               {tag}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Marquee */}
-      <div className="mt-12 overflow-hidden whitespace-nowrap py-2 bg-primary border">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, delay: 1.2 }}
+        className="mt-12 overflow-hidden whitespace-nowrap py-2 bg-primary border"
+      >
         <div className="inline-block animate-marquee text-white font-semibold text-2xl" style={{ minWidth: '200vw' }}>
           {[...marqueeFeaturesData, ...marqueeFeaturesData].map((item, i) => (
             <span key={i} className="inline-flex items-center gap-3 mx-4">
@@ -112,11 +151,16 @@ export default function FormatStyles() {
             </span>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Popup Video Modal */}
       {selectedVideo && (
-        <div className="fixed bg-black/90 inset-0 z-50 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="fixed bg-black/90 inset-0 z-50 flex items-center justify-center"
+        >
           <div className="relative w-full max-w-5xl mx-4  py-12">
             <button
               className="absolute top-0 right-0 text-white text-4xl w-[8%] h-[8%] z-10"
@@ -124,15 +168,18 @@ export default function FormatStyles() {
             >
               &times;
             </button>
-            <video
+            <motion.video
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.4 }}
               src={selectedVideo}
               controls
               autoPlay
               className="w-full rounded-lg shadow-lg h-[70vh]"
             />
           </div>
-        </div>
+        </motion.div>
       )}
-    </section>
+    </motion.section>
   )
 }
