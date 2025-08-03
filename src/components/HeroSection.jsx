@@ -235,7 +235,7 @@ export default function HeroSection({
         {/* Infinite Scrolling Brand Logos */}
         <div className="flex-1 flex items-center min-w-0 w-full md:w-auto md:pl-12">
           <div className="relative overflow-hidden w-full">
-            <div className="flex gap-12 animate-scrollBrands items-center py-2">
+            <div className="flex gap-12 animate-scrollBrands items-center py-2 ">
               {brandLogos.map((logo, idx) => (
                 <div
                   key={idx}
@@ -246,7 +246,7 @@ export default function HeroSection({
                 >
                   <div
                     key={idx}
-                    className="h-16 min-w-48 bg-center bg-no-repeat bg-cover rounded-xl"
+                    className="h-16 min-w-48 bg-center bg-no-repeat bg-cover rounded-xl "
                     style={{ backgroundImage: `url(${logo})` }}
                   />
                 </div>

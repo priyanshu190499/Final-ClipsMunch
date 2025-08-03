@@ -3,10 +3,12 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import PopupForm from './components/PopupForm'
-
 import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
+import Portfolio from './pages/Portfolio'
+import Services from './pages/Services'
+import Resources from './pages/Resources'
+import Pricing from './pages/Pricing'
+import WhyUs from './pages/WhyUs'
 
 export default function App() {
   const [showPopup, setShowPopup] = useState(false)
@@ -28,8 +30,11 @@ export default function App() {
         
         <Routes>
           <Route path="/" element={<Home openPopup={() => setShowPopup(true)} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/whyUs" element={<WhyUs />} />
         </Routes>
         <Footer />
         {showPopup && <PopupForm onClose={() => setShowPopup(false)} />}

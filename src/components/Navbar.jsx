@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ThemeToggle from './ThemeToggle'
 import logoDark from "../assets/MUNCH_Dark.png"
 import logoLight from "../assets/MUNCH_WHITE.png"
+
 export default function Navbar({ openPopup }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+  const navigate = useNavigate()
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -36,7 +37,7 @@ export default function Navbar({ openPopup }) {
       <nav className="flex items-center justify-between p-4 px-6 md:px-24 bg-neutral text-black dark:text-white dark:bg-black transition-all duration-300 relative z-50">
 
         {/* Logo */}
-        <div className="flex items-center h-10 select-none">
+        <div className="flex items-center h-10 select-none" onClick={() => navigate('/')} >
           {/* Show logoLight in dark mode, logoDark in light mode */}
           <img
             src={logoDark}
@@ -54,17 +55,20 @@ export default function Navbar({ openPopup }) {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-8 text-sm font-semibold tracking-wide">
-          {['OUR SERVICE', 'PORTFOLIO', 'RESOURCES', 'PRICING', 'WHY US'].map((item) => (
-            <li key={item}>
-              <a
-                href="#"
-                className="hover:text-secondary transition-colors"
-              >
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
+  {[
+    { label: 'OUR SERVICE', to: '/services' },
+    { label: 'PORTFOLIO', to: '/portfolio' },
+    { label: 'RESOURCES', to: '/resources' },
+    { label: 'PRICING', to: '/pricing' },
+    { label: 'WHY US', to: '/whyus' },
+  ].map((item) => (
+    <li key={item.label} className="hover:text-secondary transition-colors">
+      <Link to={item.to}>
+        {item.label}
+      </Link>
+    </li>
+  ))}
+</ul>
 
         {/* Right Buttons */}
         <div className="flex items-center gap-4">
@@ -98,15 +102,25 @@ export default function Navbar({ openPopup }) {
 
       {/* Side Drawer */}
       <div className={`fixed top-0 right-0 w-2/3 max-w-sm h-full bg-neutral dark:bg-black text-black dark:text-white z-50 transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <ul className="flex flex-col gap-6 p-6 text-lg font-semibold tracking-wide">
-          {['OUR SERVICE', 'PORTFOLIO', 'RESOURCES', 'PRICING', 'WHY US'].map((item) => (
-            <li key={item}>
-              <a href="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-secondary transition-colors">
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
+       <ul className="flex flex-col gap-6 p-6 text-lg font-semibold tracking-wide">
+    {[
+      { label: 'OUR SERVICE', to: '/services' },
+      { label: 'PORTFOLIO', to: '/portfolio' },
+      { label: 'RESOURCES', to: '/resources' },
+      { label: 'PRICING', to: '/pricing' },
+      { label: 'WHY US', to: '/whyus' },
+    ].map((item) => (
+      <li key={item.label}>
+        <Link
+          to={item.to}
+          onClick={() => setMobileMenuOpen(false)}
+          className="hover:text-secondary transition-colors"
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
 
         <div className="p-6">
           <button
