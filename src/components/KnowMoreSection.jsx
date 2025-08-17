@@ -77,11 +77,11 @@ export default function KnowMoreSection() {
           <h2 className="text-3xl font-bold mb-2">Know More!</h2>
 
           {/* Tabs */}
-          <div className="flex flex-wrap gap-4 mb-2">
+          <div className="flex flex-wrap gap-3 mb-2 ">
             {tabs.map((tab) => (
               <button
                 key={tab}
-                className={`px-8 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+                className={`custom-tabs px-8 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                   activeTab === tab
                     ? "bg-secondary text-white shadow"
                     : "bg-gradient-to-r from-[#7c0e0e] to-[#f22929] text-white dark:bg-neutral-800 dark:text-white"

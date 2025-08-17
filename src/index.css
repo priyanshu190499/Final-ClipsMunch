@@ -89,4 +89,29 @@
   animation: glowDot 1.2s ease-in-out infinite;
 }
 
+@media screen and (max-width: 425px) {
+  .custom-nav{
+    font-size: 9px !important;
+  }
+  .custom-rotLogo{
+    right: 10vw !important;
+  }
+  .custom-tags{
+    font-size: 16px !important;
+    min-height: 80px;
+  }
+  .custom-brands{
+   flex-direction: row !important;
+   gap: 4px !important;
+   margin-top: 20px;
+  }
+  .custom-trust{
+    font-size: 16px !important;
+  }
+  .custom-tabs{
+    padding: 1.5px 8px !important;
+    font-size: 10px !important;
+  }
+}
+
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from "framer-motion"
 import bv1 from "../assets/bv1.avif"
 import bv2 from "../assets/bv2.jpeg"
@@ -49,6 +49,56 @@ const marqueeFeaturesData = [
 
 export default function FormatStyles() {
   const [selectedVideo, setSelectedVideo] = useState(null)
+  const [currentIdx, setCurrentIdx] = useState(0)
+  const carouselRef = useRef(null)
+
+  // Track carousel scroll position and set active dot
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = carouselRef.current
+      if (!el) return
+      const scrollLeft = el.scrollLeft
+      const cardWidth = el.firstChild?.offsetWidth || 1
+
+      // Responsive gap calculation
+      let gap = 32; // default gap for sm
+      if (window.innerWidth >= 1024) gap = 32; // lg
+      
+      let idx;
+      if (window.innerWidth >= 1024) {
+        idx = Math.floor(scrollLeft / (cardWidth + gap));
+      } else {
+        idx = Math.round(scrollLeft / (cardWidth + gap));
+      }
+      setCurrentIdx(Math.max(0, Math.min(idx, images.length - 1)))
+    }
+    const el = carouselRef.current
+    if (el) {
+      el.addEventListener('scroll', handleScroll)
+    }
+    return () => {
+      if (el) el.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  // Scroll to card when dot is clicked
+  const scrollToCard = (i) => {
+    const el = carouselRef.current
+    if (!el) return
+    const cardWidth = el.firstChild?.offsetWidth || 1
+
+    let gap = 32;
+    if (window.innerWidth >= 1024) gap = 32;
+    else if (window.innerWidth >= 768) gap = 32;
+
+    el.scrollTo({
+      left: i * (cardWidth + gap),
+      behavior: 'smooth'
+    })
+    setCurrentIdx(i)
+  }
+
 
   return (
     <motion.section
@@ -70,8 +120,9 @@ export default function FormatStyles() {
       </motion.h2>
 
       {/* Image Carousel */}
-      <div className="mt-10 overflow-x-auto scrollbar-hide ">
-        <div className="flex gap-8 justify-start min-h-[380px] md:min-h-[510px] pl-8 pr-8 ">
+      <div>
+        <div className="mt-10 overflow-x-auto scrollbar-hide mx-8" ref={carouselRef}>
+        <div className="flex gap-8 justify-start min-h-[380px] md:min-h-[510px] ">
           {images.map((src, i) => (
             <motion.div
               key={i}
@@ -79,7 +130,7 @@ export default function FormatStyles() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.08 }}
-              className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0 border-2 border-gray-500 relative cursor-pointer"
+              className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0  relative cursor-pointer"
               onClick={() => setSelectedVideo(videos[i])}
             >
               <img
@@ -98,19 +149,37 @@ export default function FormatStyles() {
         </div>
       </div>
 
+      </div>
+      
+      {/* Tracker Dots */}
+      <div className="flex justify-center items-center mt-6 gap-3 px-8">
+        {images.map((_, i) => (
+          <span
+            key={i}
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+              currentIdx === (i)
+                ? "w-10 bg-red-600"
+                : "w-6 bg-gray-400 dark:bg-gray-600"
+            }`}
+            onClick={() => scrollToCard(i)}
+          ></span>
+        ))}
+      </div>
+
       {/* Title - 2 */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl pt-12 mx-auto "
+        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl  pt-12 mx-auto "
       >
         <span className="text-secondary text-2xl md:text-3xl font-bold">Social Video Content</span> is the New Fuel to Fire Your Brand’s Organic Growth
       </motion.h2>
 
       {/* Tags */}
-      <div className='flex justify-center items-center px-8'>
+      <div>
+      <div className='flex justify-center items-center mx-8 '>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,12 +194,16 @@ export default function FormatStyles() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.8 + i * 0.05 }}
-              className="border-5 min-w-[180px] text-start border-secondary px-4 py-3 rounded-2xl transition-all text-black dark:text-white"
+              className="border-5 min-w-[130px] text-start border-secondary px-4 py-3 rounded-2xl flex justify-center items-center text-black dark:text-white custom-tags"
             >
-              {tag}
+              <p>
+                {tag}
+              </p>
+              
             </motion.div>
           ))}
         </motion.div>
+      </div>
       </div>
 
       {/* Marquee */}
@@ -139,7 +212,7 @@ export default function FormatStyles() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, delay: 1.2 }}
-        className="mt-12 overflow-hidden whitespace-nowrap py-2 bg-primary border"
+        className="mt-12 overflow-hidden whitespace-nowrap py-2 bg-primary "
       >
         <div className="inline-block animate-marquee text-white font-semibold text-2xl" style={{ minWidth: '200vw' }}>
           {[...marqueeFeaturesData, ...marqueeFeaturesData].map((item, i) => (

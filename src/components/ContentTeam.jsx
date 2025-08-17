@@ -40,32 +40,91 @@ const ContentTeam = () => {
             <h3 className="text-xl font-bold mt-2">Full-Time Team Member</h3>
           </div>
           <ul className="space-y-3 text-sm leading-relaxed">
-            <div className="flex gap-2">
-              <span>😓</span><li> <b>Hiring Hassles:</b> Time consuming talent search, vetting and onboarding.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>😞</span><li> <b>Financial Overhead:</b> Unseen costs beyond talent payment.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>⌛</span> <li> <b>Limited Hours:</b> Constraints on real-time team availability.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>🤹</span><li> <b>Role Juggling:</b> Balancing multiple responsibilities with separate hires.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>🌐</span><li> <b>Geographical & Experience Limits:</b> Restricted by location and narrow expertise.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>🔄️</span><li> <b>Flexibility Challenges:</b> Difficulty adapting to changing project needs.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>📃</span><li> <b>Contractual Rigidity:</b> Bound by inflexible, long-term agreements.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>💼</span><li> <b>Fixed Annual Costs:</b> Set expenses, regardless of project fluctuations.</li>
-            </div>
-            <li className="pt-2 font-semibold text-base">Cost – $50,000 – $1,50,000 / year</li>
-          </ul>
+  <div className="flex gap-2">
+    <span>😓</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Hiring Hassles:</b>
+        <span>Time consuming talent search, vetting and onboarding.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>😞</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Financial Overhead:</b>
+        <span>Unseen costs beyond talent payment.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>⌛</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Limited Hours:</b>
+        <span>Constraints on real-time team availability.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>🤹</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Role Juggling:</b>
+        <span>Balancing multiple responsibilities with separate hires.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>🌐</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Geographical & Experience Limits:</b>
+        <span>Restricted by location and narrow expertise.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>🔄️</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Flexibility Challenges:</b>
+        <span>Difficulty adapting to changing project needs.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>📃</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Contractual Rigidity:</b>
+        <span>Bound by inflexible, long-term agreements.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>💼</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Fixed Annual Costs:</b>
+        <span>Set expenses, regardless of project fluctuations.</span>
+      </div>
+    </li>
+  </div>
+
+  <li className="pt-2 font-semibold text-base">
+    Cost – $50,000 – $1,50,000 / year
+  </li>
+</ul>
+
         </motion.div>
 
         {/* Right Card */}
@@ -83,31 +142,87 @@ const ContentTeam = () => {
             <h3 className="text-xl font-bold mt-2">ClipsMunch Subscription</h3>
           </div>
           <ul className="space-y-3 text-sm leading-relaxed">
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>Pre-vetted Expertise:</b> Content creation with ready-made niche experts.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>Zero Financial Baggage:</b> Focus on creativity, not on hidden financial burdens.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>24/7 Creative Availability:</b> Your ideas don’t wait, neither do we.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>All Talents in One Place:</b> A diverse pool under a single subscription.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>Global Top Talents:</b> Access the best minds from around the world.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>Flexibility Redefined:</b> Change teams or talents within 12 hours.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>Contract-Free Commitment:</b> No long-term ties.</li>
-            </div>
-            <div className="flex gap-2">
-              <span>✅</span><li> <b>Budget-Friendly Pay-as-You-Go:</b> Starts at just $999 per month.</li>
-            </div>
-          </ul>
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Pre-vetted Expertise:</b>
+        <span>Content creation with ready-made niche experts.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Zero Financial Baggage:</b>
+        <span>Focus on creativity, not on hidden financial burdens.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>24/7 Creative Availability:</b>
+        <span>Your ideas don’t wait, neither do we.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>All Talents in One Place:</b>
+        <span>A diverse pool under a single subscription.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Global Top Talents:</b>
+        <span>Access the best minds from around the world.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Flexibility Redefined:</b>
+        <span>Change teams or talents within 12 hours.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Contract-Free Commitment:</b>
+        <span>No long-term ties.</span>
+      </div>
+    </li>
+  </div>
+
+  <div className="flex gap-2">
+    <span>✅</span>
+    <li>
+      <div className="flex flex-col">
+        <b>Budget-Friendly Pay-as-You-Go:</b>
+        <span>Starts at just $999 per month.</span>
+      </div>
+    </li>
+  </div>
+</ul>
+
         </motion.div>
       </div>
 

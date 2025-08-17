@@ -23,7 +23,7 @@ export default function Navbar({ openPopup }) {
        
          
             <span  className="inline-flex  items-center gap-3 mx-4">
-             <span className=" py-2 text-neutral text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg">
+             <span className=" py-2 text-neutral text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg custom-nav">
   GET 15% OFF WITH COUPON CODE: 15 JULY 2025 - LIMITED TIME OFFER!
 </span>
 
