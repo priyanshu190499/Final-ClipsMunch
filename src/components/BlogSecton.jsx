@@ -32,7 +32,7 @@ export default function BlogsSection() {
     <section className="bg-neutral dark:bg-black text-black py-20">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center mb-10">
+        <h2 className="text-3xl font-bold text-center mb-10 text-black dark:text-white">
           <span className="text-red-600">Read Our</span> Blogs
         </h2>
 
@@ -51,7 +51,7 @@ export default function BlogsSection() {
                 />
                 <div className="h-[4px] w-full bg-red-600" />
               </div>
-              <h3 className="mt-4 text-base font-bold">{blog.title}</h3>
+              <h3 className="mt-4 text-base font-bold text-black dark:text-white">{blog.title}</h3>
             </div>
           ))}
         </div>

@@ -58,12 +58,12 @@ export default function ProcessSteps() {
   }, [])
 
   return (
-    <section className="bg-white dark:bg-black text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-4 relative items-stretch">
+    <section className="bg-white dark:bg-black text-white pt-12 px-8">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-4 relative items-stretch">
         {/* Left Side (Fixed on desktop, full width on mobile) */}
         <div className="lg:w-[32%] w-full lg:sticky lg:left-0 lg:top-24 flex flex-col justify-center lg:h-[400px] z-10  mb-8 lg:mb-0">
           <p className="text-red-500 font-semibold mb-2">// Our Process</p>
-          <h2 className="text-black dark:text-white text-4xl lg:text-5xl font-extrabold leading-tight mb-2">
+          <h2 className="text-black dark:text-white text-2xl md:text-4xl font-extrabold leading-tight mb-2">
             How <span className="text-red-600">ClipsMunch</span> Works?
           </h2>
         </div>

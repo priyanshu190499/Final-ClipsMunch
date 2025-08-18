@@ -29,7 +29,7 @@ export default function MembershipBenefits() {
   return (
     <>
       <motion.section
-        className="py-8 px-2 sm:py-16 sm:px-6 bg-neutral dark:bg-black transition-colors duration-300"
+        className="pt-12 px-8 bg-neutral dark:bg-black transition-colors duration-300"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
@@ -40,7 +40,7 @@ export default function MembershipBenefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-black dark:text-white"
+          className="text-2xl md:text-4xl font-extrabold text-center mb-8 sm:mb-12 text-black dark:text-white"
         >
           Membership <span className="text-primary">Benefits</span>
         </motion.h2>
@@ -60,16 +60,16 @@ export default function MembershipBenefits() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.6, delay: 0.1 + flatIdx * 0.12 }}
-                    className="p-1 sm:p-2 bg-secondary rounded-xl cursor-pointer w-full sm:w-auto"
+                    className="p-1 sm:p-2 bg-secondary rounded-xl cursor-pointer "
                     onClick={() => setPopupIdx(flatIdx)}
                   >
                     <div
                       className={`
-                        flex-1 min-w-[90vw] max-w-full sm:min-w-[200px] sm:max-w-[250px] min-h-[220px] sm:min-h-[300px]
-                        rounded-xl flex flex-col items-center justify-between transition
+                        flex-1 min-w-[90vw] max-w-full sm:min-w-[110px] sm:max-w-[250px] min-h-[220px] sm:min-h-[300px]
+                         flex flex-col items-center justify-between transition
                         ${type === 'theme'
-                          ? 'bg-gradient-to-br from-primary to-secondary h-full p-4 sm:p-7 text-white'
-                          : 'bg-white dark:bg-black text-black border-10 p-2 sm:p-4 border-primary dark:text-white'}
+                          ? 'bg-gradient-to-br from-primary to-secondary h-full p-4 sm:p-7 text-white rounded-xl'
+                          : 'bg-white dark:bg-black text-black border-10 p-2 sm:p-4 border-primary dark:text-white rounded-xl'}
                       `}
                     >
                       <p className="text-base sm:text-xl font-bold text-start leading-snug">

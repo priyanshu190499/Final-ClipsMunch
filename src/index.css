@@ -89,16 +89,16 @@
   animation: glowDot 1.2s ease-in-out infinite;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .custom-nav{
     font-size: 9px !important;
   }
-  .custom-rotLogo{
-    right: 10vw !important;
+  .custom-rotLogo{    
+    right: 10% !important;
   }
   .custom-tags{
-    font-size: 16px !important;
-    min-height: 80px;
+    font-size: 12px !important;
+    
   }
   .custom-brands{
    flex-direction: row !important;
@@ -111,6 +111,13 @@
   .custom-tabs{
     padding: 1.5px 8px !important;
     font-size: 10px !important;
+  }
+  .custom-cont-team{
+    font-size: 14px !important;
+  }
+  .custom-call{
+     font-size: 14px !important;
+     
   }
 }
 

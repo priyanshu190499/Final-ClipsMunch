@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 const ContentTeam = () => {
   return (
     <motion.section
-      className="py-16 px-4 bg-neutral dark:bg-black text-black dark:text-white transition-colors duration-300"
+      className="py-12 px-4 bg-neutral dark:bg-black text-black dark:text-white transition-colors duration-300"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="max-w-6xl mx-auto text-center mb-6">
+      <div className="max-w-7xl mx-auto text-center mb-6 ">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,12 +19,12 @@ const ContentTeam = () => {
         >
           <span className="text-primary">Build Your In-House Content Team</span>
           <br />
-          <span className="text-white dark:text-white">Without the Overhead!</span>
+          <span className="text-black dark:text-white">Without the Overhead!</span>
         </motion.h2>
       </div>
 
       {/* Two column card comparison */}
-      <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto justify-center items-stretch">
+      <div className="flex flex-col md:flex-row gap-8 max-w-6xl  mx-auto justify-center items-stretch">
         {/* Left Card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -34,7 +34,7 @@ const ContentTeam = () => {
           className="flex-1 flex flex-col gap-12 bg-gradient-to-br from-primary to-secondary text-white p-6 md:p-16 rounded-4xl max-w-xl border border-gray-700"
         >
           <div className="mb-4 flex flex-col items-center ">
-            <span className="bg-white text-red-600 px-8 text-md font-semibold rounded-bl-3xl rounded-tr-3xl">
+            <span className="bg-white text-red-600 px-8 text-md font-semibold rounded-bl-3xl rounded-tr-3xl custom-cont-team">
               Typical Content Creator With
             </span>
             <h3 className="text-xl font-bold mt-2">Full-Time Team Member</h3>
@@ -136,7 +136,7 @@ const ContentTeam = () => {
           className="flex-1 flex flex-col gap-12 bg-gradient-to-br from-primary to-secondary text-white p-6 md:p-16 rounded-4xl max-w-xl border border-gray-700"
         >
           <div className="mb-4 flex flex-col items-center">
-            <span className="bg-white text-red-600 px-8 text-md font-semibold rounded-bl-3xl rounded-tr-3xl">
+            <span className="bg-white text-red-600 px-8 text-md font-semibold rounded-bl-3xl rounded-tr-3xl custom-cont-team">
               You With
             </span>
             <h3 className="text-xl font-bold mt-2">ClipsMunch Subscription</h3>
@@ -234,7 +234,7 @@ const ContentTeam = () => {
         transition={{ duration: 0.7, delay: 0.6 }}
         className="mt-12 flex max-w-6xl mx-auto justify-center"
       >
-        <div className="bg-secondary w-full text-white text-2xl md:text-4xl font-bold px-4 py-4 md:px-8 md:py-4 rounded-full shadow-lg text-center">
+        <div className="bg-secondary w-full text-white text-2xl font-bold px-4 py-4  rounded-full shadow-lg text-center">
           Have More Questions? Book Your Call Now!
         </div>
       </motion.div>

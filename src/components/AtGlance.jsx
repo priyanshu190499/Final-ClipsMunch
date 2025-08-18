@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function AtGlance() {
   return (
     <motion.section
-      className="bg-neutral dark:bg-black text-black dark:text-white py-16 px-6"
+      className="bg-neutral dark:bg-black text-black dark:text-white pt-12 px-6"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -18,7 +18,7 @@ export default function AtGlance() {
         transition={{ duration: 0.7, delay: 0.2 }}
         className="text-2xl md:text-4xl font-extrabold text-center mb-14"
       >
-        <span className="text-secondary text-2xl md:text-4xl">ClipsMunch</span> at Glance
+        <span className="text-secondary text-2xl md:text-4xl font-extrabold">ClipsMunch</span> at Glance
       </motion.h2>
 
       {/* Bento Grid - Flex Format */}

@@ -102,7 +102,7 @@ export default function FormatStyles() {
 
   return (
     <motion.section
-      className="bg-neutral dark:bg-black text-center py-12 transition-colors relative"
+      className="bg-neutral dark:bg-black text-center pt-12 transition-colors relative"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -114,7 +114,7 @@ export default function FormatStyles() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl mx-auto"
+        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl px-8 mx-auto"
       >
         <span className="text-secondary text-2xl md:text-3xl font-bold">Our Clients Shared Their Love</span> For Our Work
       </motion.h2>
@@ -172,9 +172,9 @@ export default function FormatStyles() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl  pt-12 mx-auto "
+        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl pt-12 px-8 mx-auto "
       >
-        <span className="text-secondary text-2xl md:text-3xl font-bold">Social Video Content</span> is the New Fuel to Fire Your Brand’s Organic Growth
+        <span className="text-secondary text-2xl md:text-3xl font-bold ">Social Video Content</span> is the New Fuel to Fire Your Brand’s Organic Growth
       </motion.h2>
 
       {/* Tags */}
@@ -194,7 +194,7 @@ export default function FormatStyles() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.8 + i * 0.05 }}
-              className="border-5 min-w-[130px] text-start border-secondary px-4 py-3 rounded-2xl flex justify-center items-center text-black dark:text-white custom-tags"
+              className="border-5 min-h-[110px] min-w-[130px] text-start border-secondary px-4 py-3 rounded-2xl flex justify-center items-center text-black dark:text-white custom-tags"
             >
               <p>
                 {tag}

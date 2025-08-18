@@ -13,12 +13,16 @@ const reasons = [
 export default function BookCall() {
   // Handlers for WhatsApp and Email buttons
   const handleWhatsapp = () => {
-    window.open("https://wa.me/918448677742", "_blank");
+    window.open("https://wa.me/919560479716", "_blank");
+  };
+
+   const handleCall = () => {
+    window.location.href = "tel:9560479716";
   };
 
   
   return (
-    <section className="bg-gradient-to-b from-primary to-secondary py-16 px-4 md:px-10 text-white">
+    <section className="bg-gradient-to-b from-primary to-secondary py-12 px-4 md:px-10 text-white">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-12">
         Why You Should Book the Call?
       </h2>
@@ -33,12 +37,12 @@ export default function BookCall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
-              className="flex items-center gap-6 bg-gradient-to-r from-[#7c0e0e] to-[#f22929] rounded-xl px-5 py-2 shadow-secondary"
+              className="flex justify-center items-center gap-6 bg-gradient-to-r from-[#7c0e0e] to-[#f22929] rounded-xl px-5 py-2 shadow-secondary min-h-[70px]"
             >
-              <div>
+              <div >
                 <div className="w-4 h-4 bg-white rounded-full" />
               </div>
-              <p className="text-xl font-bold">{text}</p>
+              <p className="text-xl font-bold  custom-call ">{text}</p>
             </motion.div>
           ))}
         </div>
@@ -73,7 +77,9 @@ export default function BookCall() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="w-full"
             >
-              <button className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-primary">
+              <button 
+              className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-primary"
+              onClick={handleCall}>
                 CALL US
               </button>
             </motion.div>
@@ -101,7 +107,7 @@ export default function BookCall() {
               className="w-full flex justify-end"
             >
               <a
-                href="mailto:priyanshoochoudhary@gmail.com"
+                href="mailto:ClipsMunch@gmail.com"
                 className="bg-white text-lg md:text-2xl lg:text-3xl text-black w-full md:w-1/2 py-4 rounded-3xl font-extrabold border-6 border-primary shadow-secondary flex items-center justify-center"
                 style={{ textDecoration: "none" }}
               >
