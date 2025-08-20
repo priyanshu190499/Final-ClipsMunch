@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import CTAButton from "./CTAButton";
 import Bcurve from "../assets/blackcurve.png";
 import Wcurve from "../assets/white curve.webp";
-import Bcircle from "../assets/canva_white_circle.png";
+// import Bcircle from "../assets/canva_white_circle.png";
 import Wcircle from "../assets/white-circle.png";
 import b1 from "../assets/b-1.png";
 import b2 from "../assets/b-2.png";
@@ -161,7 +161,7 @@ export default function HeroSection({
   return (
     <>
       {/* HERO CANVAS + CONTENT (80vh) */}
-      <section className="relative w-full min-h-[100vh] flex flex-col justify-end overflow-hidden bg-[#b71c1c]">
+      <section className="relative w-full min-h-[60vh] flex flex-col justify-end overflow-hidden bg-[#b71c1c]">
         {/* OGL Canvas BG */}
         <div
           ref={ctnDom}
@@ -175,24 +175,28 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="absolute top-1/6 z-10 flex flex-col items-start justify-center text-left px-4 md:px-24 pt-16 md:pt-24 pb-10 md:pb-20 w-full max-w-5xl"
+          className=" absolute top-0 z-10 h-full flex flex-col items-start justify-center text-left px-4 md:px-24 pt-10 md:pt-12 pb-10 md:pb-12 w-full max-w-6xl"
         >
-          <h3 className="text-lg md:text-2xl font-medium text-white drop-shadow-sm mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
-            <Typewriter
-              options={{
-                strings: [
-                  "One Subscription For Your All Video Editing Requirements",
-                  "Unlimited Edits. Unlimited Creativity.",
-                  "Scale Your Brand With ClipsMunch."
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 40,
-                deleteSpeed: 30,
-                pauseFor: 1800,
-              }}
-            />
-          </h3>
+          <h3
+  className=" text-white drop-shadow-sm mb-2 custom-typewriter"
+  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
+>
+  <Typewriter
+    options={{
+      strings: [
+        "One Subscription For Your All Video Editing Requirements",
+        "Unlimited Edits. Unlimited Creativity.",
+        "Scale Your Brand With ClipsMunch."
+      ],
+      autoStart: true,
+      loop: true,
+      delay: 40,
+      deleteSpeed: 30,
+      pauseFor: 1800,
+    }}
+  />
+</h3>
+
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

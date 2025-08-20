@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from "framer-motion"
 import bv1 from "../assets/bv1.avif"
 import bv2 from "../assets/bv2.jpeg"
@@ -49,55 +49,6 @@ const marqueeFeaturesData = [
 
 export default function FormatStyles() {
   const [selectedVideo, setSelectedVideo] = useState(null)
-  const [currentIdx, setCurrentIdx] = useState(0)
-  const carouselRef = useRef(null)
-
-  // Track carousel scroll position and set active dot
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const el = carouselRef.current
-      if (!el) return
-      const scrollLeft = el.scrollLeft
-      const cardWidth = el.firstChild?.offsetWidth || 1
-
-      // Responsive gap calculation
-      let gap = 32; // default gap for sm
-      if (window.innerWidth >= 1024) gap = 32; // lg
-      
-      let idx;
-      if (window.innerWidth >= 1024) {
-        idx = Math.floor(scrollLeft / (cardWidth + gap));
-      } else {
-        idx = Math.round(scrollLeft / (cardWidth + gap));
-      }
-      setCurrentIdx(Math.max(0, Math.min(idx, images.length - 1)))
-    }
-    const el = carouselRef.current
-    if (el) {
-      el.addEventListener('scroll', handleScroll)
-    }
-    return () => {
-      if (el) el.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  // Scroll to card when dot is clicked
-  const scrollToCard = (i) => {
-    const el = carouselRef.current
-    if (!el) return
-    const cardWidth = el.firstChild?.offsetWidth || 1
-
-    let gap = 32;
-    if (window.innerWidth >= 1024) gap = 32;
-    else if (window.innerWidth >= 768) gap = 32;
-
-    el.scrollTo({
-      left: i * (cardWidth + gap),
-      behavior: 'smooth'
-    })
-    setCurrentIdx(i)
-  }
 
 
   return (
@@ -121,7 +72,7 @@ export default function FormatStyles() {
 
       {/* Image Carousel */}
       <div>
-        <div className="mt-10 overflow-x-auto scrollbar-hide mx-8" ref={carouselRef}>
+        <div className="mt-10 overflow-x-auto scrollbar-hide mx-8" >
         <div className="flex gap-8 justify-start min-h-[380px] md:min-h-[510px] ">
           {images.map((src, i) => (
             <motion.div
@@ -151,20 +102,7 @@ export default function FormatStyles() {
 
       </div>
       
-      {/* Tracker Dots */}
-      <div className="flex justify-center items-center mt-6 gap-3 px-8">
-        {images.map((_, i) => (
-          <span
-            key={i}
-            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-              currentIdx === (i)
-                ? "w-10 bg-red-600"
-                : "w-6 bg-gray-400 dark:bg-gray-600"
-            }`}
-            onClick={() => scrollToCard(i)}
-          ></span>
-        ))}
-      </div>
+     
 
       {/* Title - 2 */}
       <motion.h2
