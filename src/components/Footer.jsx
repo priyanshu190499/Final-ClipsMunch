@@ -1,8 +1,35 @@
-import logoLight from "../assets/MUNCH_WHITE.png"
+import { useState } from "react";
+import logoLight from "../assets/MUNCH_WHITE.png";
+
+const footerSections = [
+  {
+    title: "MunchClip",
+    links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+  },
+  {
+    title: "Format & Styles",
+    links: Array.from({ length: 10 }, (_, i) => `Link ${i + 1}`),
+  },
+  {
+    title: "Industry Specific Solution",
+    links: Array.from({ length: 10 }, (_, i) => `Link ${i + 1}`),
+  },
+  {
+    title: "Comparison",
+    links: Array.from({ length: 6 }, (_, i) => `Link ${i + 1}`),
+  },
+  {
+    title: "Clients",
+    links: Array.from({ length: 5 }, (_, i) => `Link ${i + 1}`),
+  },
+];
+
 export default function Footer() {
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <footer className="bg-gray-800 text-white pt-20">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-start gap-8">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-start gap-12">
         {/* Logo */}
         <div className="flex justify-center lg:justify-start w-full lg:w-auto mb-8 lg:mb-0">
           <img
@@ -13,23 +40,49 @@ export default function Footer() {
           />
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex flex-wrap gap-4 sm:gap-8 text-sm font-light tracking-wider uppercase justify-center lg:justify-end w-full lg:w-auto">
-          <a href="#" className="hover:text-white text-gray-400">
-            MunchClip
-          </a>
-          <a href="#" className="hover:text-white text-gray-400">
-            Format & Styles
-          </a>
-          <a href="#" className="hover:text-white text-gray-400">
-            Industry Specific Solution
-          </a>
-          <a href="#" className="hover:text-white text-gray-400">
-            Comparison
-          </a>
-          <a href="#" className="hover:text-white text-gray-400">
-            Clients
-          </a>
+        {/* Footer Sections */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:gap-12 w-full lg:w-auto text-sm">
+          {footerSections.map((section, index) => (
+            <div key={index} className="mb-6 lg:mb-0">
+              {/* Accordion for small screens */}
+              <div className="lg:hidden border-b border-gray-700">
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                  className="flex justify-between w-full py-3 font-bold text-base"
+                >
+                  {section.title}
+                  <span>{openIndex === index ? "−" : "+"}</span>
+                </button>
+                {openIndex === index && (
+                  <ul className="pl-2 pb-3 space-y-2 text-gray-400">
+                    {section.links.map((link, i) => (
+                      <li key={i}>
+                        <a href="#" className="hover:text-white">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              {/* Static links for large screens */}
+              <div className="hidden lg:block">
+                <h4 className="font-bold mb-4 text-base">{section.title}</h4>
+                <ul className="space-y-2 text-gray-400 ">
+                  {section.links.map((link, i) => (
+                    <li key={i}>
+                      <a href="#" className="hover:text-white">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

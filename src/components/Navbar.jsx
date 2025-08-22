@@ -18,14 +18,14 @@ export default function Navbar({ openPopup }) {
   return (
     <>
       {/* Top border */}
-      <div className="h-[35px] bg-secondary w-full flex justify-center">
+      <div className=" bg-secondary w-full flex justify-center">
        
        
          
-            <span  className="inline-flex  items-center gap-3 mx-4">
-             <span className=" py-2 text-neutral text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg custom-nav">
+            
+             <span className=" py-1 text-neutral text-xs lg:text-[0.8rem] custom-nav">
   GET 15% OFF WITH COUPON CODE: 15 JULY 2025 - LIMITED TIME OFFER!
-</span>
+
 
              
             </span>

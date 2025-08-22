@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import CTAButton from "./CTAButton";
 import Bcurve from "../assets/blackcurve.png";
-import Wcurve from "../assets/white curve.webp";
-// import Bcircle from "../assets/canva_white_circle.png";
-// import Wcircle from "../assets/white-circle.png";
+import Wcurve from "../assets/white-circle.png";
 import b1 from "../assets/b-1.png";
 import b2 from "../assets/b-2.png";
 import b3 from "../assets/b-3.png";
@@ -79,7 +77,7 @@ export default function HeroSection({
   const ctnDom = useRef(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
   const brandLogos = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18];
-  const letters = "BEST STARTUP AGENCY".split("");
+  const letters = "BEST VIDEO AGENCY".split("");
   useEffect(() => {
     if (!ctnDom.current) return;
     const ctn = ctnDom.current;
@@ -164,7 +162,7 @@ export default function HeroSection({
   return (
     <>
       {/* HERO CANVAS + CONTENT (80vh) */}
-      <section className="relative w-full min-h-[60vh] flex flex-col justify-end overflow-hidden bg-[#b71c1c]">
+      <section className="relative w-full min-h-[60vh] flex flex-col justify-end overflow-hidden bg-[#b71c1c] custom-hero">
         {/* OGL Canvas BG */}
         <div
           ref={ctnDom}
@@ -234,7 +232,7 @@ export default function HeroSection({
       </section>
 
       {/* Trusted by 100+ Brands Section (improved) */}
-      <section className="relative w-full bg-[#f5efea] dark:bg-black pb-8 md:pb-8 pt-12 md:pt-24 px-4 md:px-24 border-b-3 border-secondary flex flex-col md:flex-row items-center md:items-stretch justify-between gap-8 md:gap-0">
+      <section className="relative w-full bg-neutral dark:bg-black pb-8 md:pb-8 pt-12 md:pt-24 px-4 md:px-24 border-b-3 border-secondary flex flex-col md:flex-row items-center md:items-stretch justify-between gap-8 md:gap-0">
         <div className="flex flex-col items-start py-8 justify-center w-full md:w-auto md:pr-12 md:border-r-3 md:border-r-secondary custom-brands">
           <span className="text-black dark:text-white text-3xl md:text-2xl font-semibold mb-1 custom-trust">Trusted By</span>
           <span className="text-secondary text-3xl md:text-2xl font-extrabold mb-1 custom-trust">100+ Brands</span>

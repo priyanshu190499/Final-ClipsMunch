@@ -6,7 +6,7 @@ const testimonials = [
     name: "Avinash Singh",
     role: "Founder @ Luminance",
     message:
-      "Great result and the communication with the seller was amazing.",
+      "Great result and the communication with the seller was amazing. Overall great experience",
     rating: 5,
   },
   {
@@ -101,7 +101,7 @@ export default function TestimonialSlider() {
 
   return (
     <section className="bg-neutral dark:bg-black text-black dark:text-white py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-8">
           <p className="text-red-500 font-semibold">// Our Feedback</p>
@@ -112,16 +112,17 @@ export default function TestimonialSlider() {
 
         {/* Main Card Container */}
         <div className="flex flex-col items-center">
-          <div className="  flex flex-col lg:flex-row gap-8 w-full items-stretch justify-center overflow-hidden bg-transparent">
+          <div className="  flex flex-col items-center lg:flex-row gap-10 w-full justify-center overflow-hidden bg-transparent">
             {/* Fixed Rating Box */}
             <div
               className="bg-white dark:bg-black border-4 border-red-500 rounded-[40px] p-10 flex flex-col items-center shadow-lg justify-center"
               style={{
                 flex: "1 1 20%",
-                minWidth: "320px",
-                maxWidth: "420px",
-                minHeight: "340px",
-                height: "100%",
+                minWidth: "300px",
+                maxWidth: "300px",
+                maxHeight:"300px",
+                minHeight: "300px",
+               
               }}
             >
               <h1 className="text-6xl font-extrabold text-black dark:text-white mb-2">4.8</h1>
@@ -134,7 +135,7 @@ export default function TestimonialSlider() {
               </div>
               <p className="font-bold text-center text-lg mb-2">( 120 Review )</p>
               <hr className="my-4 w-full border-red-200" />
-              <p className="text-center text-base text-gray-600 dark:text-gray-400">
+              <p className="text-center text-xs text-gray-600 dark:text-gray-400">
                 Enhancing top-tier companies with innovative startup and business solutions!"
               </p>
             </div>
@@ -147,14 +148,7 @@ export default function TestimonialSlider() {
               onTouchEnd={handleTouchEnd}
             >
               <div className="w-full h-full flex items-center justify-center">
-                <button
-                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-secondary text-white text-2xl  rounded-xl z-10  hover:bg-primary"
-                  onClick={prevSlide}
-                  aria-label="Previous"
-                  style={{ fontWeight: 700 }}
-                >
-                  &#8592;
-                </button>
+               
                 <div className="w-full flex overflow-hidden">
                   {testimonials.map((t, idx) => (
                     <div
@@ -163,10 +157,10 @@ export default function TestimonialSlider() {
                         idx === current ? "block" : "hidden"
                       }`}
                     >
-                      <div className="bg-secondary rounded-[40px] p-10 text-white h-full flex flex-col justify-between shadow-md min-h-[350px]">
-                        <div className="flex flex-row items-stretch h-full">
+                      <div className="bg-secondary rounded-[40px] p-6  text-white h-full flex flex-col items-center justify-center shadow-md min-h-[300px] custom-feedmain">
+                        <div className="flex flex-row justify-between items-centers h-full ">
                           {/* Name & Role Vertical Section */}
-                          <div className="flex flex-col justify-center items-center w-[60px] md:w-[120px] lg:w-[160px]">
+                          <div className=" flex flex-col justify-center items-center w-[80px]  ">
                             <div className="flex flex-col items-center justify-center h-full rotate-[-90deg]">
                               <div>
                                 <p className="font-extrabold text-xl md:text-2xl lg:text-3xl text-white text-center whitespace-nowrap">
@@ -196,14 +190,7 @@ export default function TestimonialSlider() {
                     </div>
                   ))}
                 </div>
-                <button
-                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-secondary text-white text-2xl  rounded-xl z-10  hover:bg-primary"
-                  onClick={nextSlide}
-                  aria-label="Next"
-                  style={{ fontWeight: 700 }}
-                >
-                  &#8594;
-                </button>
+               
               </div>
             </div>
           </div>

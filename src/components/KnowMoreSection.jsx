@@ -71,7 +71,7 @@ export default function KnowMoreSection() {
 
   return (
     <section className="bg-neutral dark:bg-black text-black dark:text-white ">
-      <div className="mx-auto flex flex-col gap-8 md:flex-row items-stretch  max-w-7xl">
+      <div className="mx-auto flex flex-col gap-8 md:flex-row items-stretch ">
         {/* Left - Text + Tabs + Accordion */}
         <div className="w-full md:w-2/3 py-10  flex flex-col gap-6  px-8">
 

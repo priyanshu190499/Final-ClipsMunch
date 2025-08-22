@@ -2,42 +2,42 @@ import { motion } from "framer-motion";
 
 const leftCards = [
   {
-    title: 'Trusted by clients worldwide',
+    title: "Trusted by clients worldwide",
     desc: "Running out of copy so I’ll write anything.",
-    variant: 'large',
+    variant: "large",
   },
   {
-    title: 'Expertly edited',
+    title: "Expertly edited",
     desc: "Yes, it’s true. I’m not even kidding.",
-    variant: 'small',
+    variant: "small",
   },
   {
-    title: 'Expertly edited',
+    title: "Expertly edited",
     desc: "Yes, it’s true. I’m not even kidding.",
-    variant: 'small',
+    variant: "small",
   },
   {
-    title: 'Expertly edited',
+    title: "Expertly edited",
     desc: "Yes, it’s true. I’m not even kidding.",
-    variant: 'small',
+    variant: "small",
   },
   {
-    title: 'Expertly edited',
+    title: "Expertly edited",
     desc: "Yes, it’s true. I’m not even kidding.",
-    variant: 'small',
+    variant: "small",
   },
 ];
 
 const rightCards = [
   {
-    title: 'A powerhouse of talent',
+    title: "A powerhouse of talent",
     desc: "Running out of copy so I’ll write anything.",
-    variant: 'large',
+    variant: "large",
   },
   {
-    title: 'A powerhouse of talent',
+    title: "A powerhouse of talent",
     desc: "Running out of copy so I’ll write anything.",
-    variant: 'large',
+    variant: "large",
   },
 ];
 
@@ -58,11 +58,14 @@ export default function FormatStyleBento() {
         transition={{ duration: 0.7, delay: 0.2 }}
         className="text-center text-2xl md:text-4xl font-bold mb-10"
       >
-        Choose Your <span className="italic font-extrabold underline decoration-white/60">Format / Style</span>
+        Choose Your{" "}
+        <span className="italic font-extrabold underline decoration-white/60">
+          Format / Style
+        </span>
       </motion.h2>
 
-      {/* Two-column bento layout for desktop, stacked for mobile */}
-      <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto">
+      {/* Bento layout for large screens */}
+      <div className="hidden lg:flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto">
         {/* Left Section (60%) */}
         <div className="w-full lg:w-[60%] flex flex-col gap-6">
           {/* Large card */}
@@ -76,7 +79,7 @@ export default function FormatStyleBento() {
             <h3 className="text-2xl font-bold mb-1">{leftCards[0].title}</h3>
             <p className="text-lg text-white/90">{leftCards[0].desc}</p>
           </motion.div>
-          {/* 2x2 grid of small cards, heights adjusted for alignment */}
+          {/* 2x2 grid of small cards */}
           <div className="grid grid-cols-2 gap-6 h-[400px]">
             {leftCards.slice(1).map((item, i) => (
               <motion.div
@@ -111,8 +114,8 @@ export default function FormatStyleBento() {
         </div>
       </div>
 
-      {/* Responsive: stack all cards in a column on small screens */}
-      <div className="lg:hidden flex flex-col gap-6 max-w-2xl mx-auto mt-10">
+      {/* Equal grid for small/medium screens */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mt-10 lg:hidden">
         {[...leftCards, ...rightCards].map((item, i) => (
           <motion.div
             key={i}
@@ -120,13 +123,13 @@ export default function FormatStyleBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.2 + i * 0.08 }}
-            className={`rounded-2xl p-6 bg-gradient-to-br from-[#d32121] to-[#5c0000] shadow-md flex flex-col justify-end transition duration-300 ${item.variant === 'large' ? 'min-h-[180px]' : 'min-h-[100px]'}`}
+            className="rounded-2xl p-6 bg-gradient-to-br from-[#d32121] to-[#5c0000] shadow-md flex flex-col justify-end min-h-[140px]"
           >
-            <h3 className={`${item.variant === 'large' ? 'text-2xl' : 'text-lg'} font-bold mb-1`}>{item.title}</h3>
-            <p className={`${item.variant === 'large' ? 'text-lg' : 'text-base'} text-white/90`}>{item.desc}</p>
+            <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+            <p className="text-base text-white/90">{item.desc}</p>
           </motion.div>
         ))}
       </div>
     </motion.section>
-  )
+  );
 }
