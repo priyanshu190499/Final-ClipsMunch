@@ -4,7 +4,7 @@ const steps = [
   {
     title: "Upload Footage/Clips",
     desc:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
+      "Drag and drop your raw videos or clips to our secure platform—quick, simple, and hassle-free.",
     color: "bg-red-600",
   },
   {
@@ -87,20 +87,20 @@ export default function ProcessSteps() {
         <div
           ref={stepsContainerRef}
           id="steps-container"
-          className="lg:w-[68%] w-full flex flex-col gap-0 max-h-[500px] min-h-[300px] overflow-y-auto px-2 scroll-smooth scrollbar-hide snap-y snap-mandatory"
+          className="lg:w-[68%] w-full flex flex-col gap-0 max-h-[500px] min-h-[300px] overflow-y-auto px-2 scroll-smooth scrollbar-hide snap-y snap-mandatory  "
         >
           {steps.map((step, idx) => (
             <div
               key={idx}
               data-index={idx}
-              className="flex flex-col md:flex-col lg:flex-row items-center gap-8  min-h-[420px] snap-center justify-center"
+              className="flex flex-col md:flex-col lg:flex-row items-center gap-4  min-h-[420px] snap-center justify-center "
               style={{ scrollSnapAlign: 'center' }}
             >
               {/* Step Image/Color Block */}
-              <div className={`w-[90vw] sm:w-[420px] h-[220px] sm:h-[320px] lg:w-[320px] lg:h-[320px] ${step.color} rounded-lg flex-shrink-0 mb-6 lg:mb-0`} />
+              <div className={`w-[80vw] sm:w-[320px] h-[220px] sm:h-[320px] lg:w-[320px] lg:h-[320px] ${step.color} rounded-lg flex-shrink-0 lg:mb-0 custom-process` } />
               {/* Step Content */}
-              <div className="flex flex-col justify-center items-start max-w-xl px-2">
-                <h3 className="text-black dark:text-white text-2xl sm:text-3xl font-extrabold mb-4">{step.title}</h3>
+              <div className="flex flex-col justify-center items-start max-w-xl px-2 ">
+                <h3 className="text-black dark:text-white text-2xl sm:text-3xl font-extrabold mb-2">{step.title}</h3>
                 <p className="text-black dark:text-white text-base sm:text-lg ">{step.desc}</p>
               </div>
             </div>

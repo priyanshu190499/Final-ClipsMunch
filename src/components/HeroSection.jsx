@@ -6,7 +6,7 @@ import CTAButton from "./CTAButton";
 import Bcurve from "../assets/blackcurve.png";
 import Wcurve from "../assets/white curve.webp";
 // import Bcircle from "../assets/canva_white_circle.png";
-import Wcircle from "../assets/white-circle.png";
+// import Wcircle from "../assets/white-circle.png";
 import b1 from "../assets/b-1.png";
 import b2 from "../assets/b-2.png";
 import b3 from "../assets/b-3.png";
@@ -79,7 +79,7 @@ export default function HeroSection({
   const ctnDom = useRef(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
   const brandLogos = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18];
-
+  const letters = "BEST STARTUP AGENCY".split("");
   useEffect(() => {
     if (!ctnDom.current) return;
     const ctn = ctnDom.current;
@@ -145,6 +145,9 @@ export default function HeroSection({
     if (mouseReact) {
       ctn.addEventListener("mousemove", handleMouseMove);
     }
+
+    
+
 
     return () => {
       cancelAnimationFrame(animateId);
@@ -265,8 +268,67 @@ export default function HeroSection({
             <img src={Bcurve} alt="curve" className="hidden dark:block" />
             <img src={Wcurve} alt="curve" className="block dark:hidden" />
           </div>
-          {/* <img src={Wcircle} alt="circle" className="hidden dark:block absolute top-3 left-[24%] animate-spin-slow" /> */}
-          <img src={Wcircle} alt="circle" className=" absolute top-3 left-[24%] animate-spin-slow" />
+           <button
+      className="
+        absolute grid place-content-center w-[153px] h-[153px]
+        rounded-full border-none cursor-pointer
+        bg-primary text-white font-semibold
+        overflow-hidden transition-all duration-300
+        hover:bg-black hover:scale-105 top-3 left-[24%]
+      "
+    >
+      {/* Rotating text */}
+      <p
+        className="
+          absolute inset-0
+          animate-[text-rotation_8s_linear_infinite]
+        "
+      >
+        {letters.map((letter, i) => (
+          <span
+            key={i}
+            style={{ "--index": i }}
+            className="
+              absolute inset-[7px]
+              [transform:rotate(calc(19deg*var(--index)))]
+            "
+          >
+            {letter}
+          </span>
+        ))}
+      </p>
+
+      {/* Circle + icons */}
+      <div
+        className="
+          relative w-18 h-18 rounded-full
+          bg-white text-secondary
+          flex items-center justify-center overflow-hidden
+        "
+      >
+        {/* First Icon */}
+        <svg
+          viewBox="0 0 14 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="
+            w-[24px] h-[24px]
+            transition-transform duration-300 ease-in-out
+            group-hover:[transform:translate(150%,-150%)]
+          "
+        >
+          <path
+            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+            fill="currentColor"
+          />
+        </svg>
+
+       
+      </div>
+    </button>
+          
+            
+          
         </div>
         <style>{`
           @keyframes scrollBrands {
