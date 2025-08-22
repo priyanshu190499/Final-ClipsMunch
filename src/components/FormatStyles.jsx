@@ -95,13 +95,13 @@ export default function FormatStyles() {
         onMouseLeave={() => setPaused(false)}
       >
         <motion.div
-          className="flex gap-8 min-h-[380px] md:min-h-[510px]"
+          className="flex gap-8 custom-videos-marquee"
           style={{ x }}
         >
           {[...images, ...images].map((src, i) => (
             <div
               key={i}
-              className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0 relative cursor-pointer"
+              className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0 relative cursor-pointer "
               onClick={() => setSelectedVideo(videos[i % videos.length])}
             >
               <img

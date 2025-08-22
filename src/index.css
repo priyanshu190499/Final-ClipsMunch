@@ -77,6 +77,9 @@
   .custom-rotLogo{    
     right: 10% !important;
   }
+  .custom-videos-marquee{
+    height: 400px !important;
+  }
   .custom-tags{
     font-size: 12px !important;
     
