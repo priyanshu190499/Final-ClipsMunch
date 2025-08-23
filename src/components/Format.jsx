@@ -56,7 +56,7 @@ export default function FormatStyleBento() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="text-center text-2xl md:text-4xl font-bold mb-10"
+        className="text-center text-xl md:text-4xl font-extrabold  mb-10"
       >
         Choose Your{" "}
         <span className="italic font-extrabold underline decoration-white/60">

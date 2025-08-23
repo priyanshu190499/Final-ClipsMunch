@@ -16,7 +16,7 @@ export default function Navbar({ openPopup }) {
   }, [mobileMenuOpen])
 
   return (
-    <>
+    <div className='sticky top-0 z-100'>
       {/* Top border */}
       <div className=" bg-secondary w-full flex justify-center">
        
@@ -34,7 +34,7 @@ export default function Navbar({ openPopup }) {
       
       </div>
 
-      <nav className="flex items-center justify-between p-4 px-6 md:px-24 bg-neutral text-black dark:text-white dark:bg-black transition-all duration-300 relative z-50">
+      <nav className=" flex items-center justify-between p-4 px-6 md:px-24 bg-neutral text-black dark:text-white dark:bg-black transition-all duration-300 relative z-50">
 
         {/* Logo */}
         <div className="flex items-center h-10 select-none" onClick={() => navigate('/')} >
@@ -134,6 +134,6 @@ export default function Navbar({ openPopup }) {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }

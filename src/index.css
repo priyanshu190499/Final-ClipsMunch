@@ -67,12 +67,12 @@
 
 @media screen and (max-width: 480px) {
   .custom-nav{
-    font-size: 0.5rem !important;
+    font-size: 0.6rem !important;
     padding: 0 4 !important;
 
   }
   .custom-hero{
-    min-height: 62vh !important;
+    min-height: 65vh !important;
   }
   .custom-rotLogo{    
     right: 10% !important;
@@ -91,6 +91,9 @@
   }
   .custom-trust{
     font-size: 16px !important;
+  }
+  .custom-processBlockno{
+    display: inline-block !important;
   }
   .custom-tabs{
     padding: 2px 8px !important;

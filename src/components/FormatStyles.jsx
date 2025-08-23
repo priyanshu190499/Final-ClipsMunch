@@ -83,7 +83,7 @@ export default function FormatStyles() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl px-8 mx-auto"
+        className="text-xl md:text-4xl font-extrabold text-black dark:text-white leading-snug max-w-7xl px-8 mx-auto"
       >
         <span className="text-secondary">Our Clients Shared Their Love</span> For Our Work
       </motion.h2>
@@ -126,7 +126,7 @@ export default function FormatStyles() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-        className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-snug max-w-7xl pt-12 px-8 mx-auto "
+        className="text-xl md:text-3xl font-extrabold text-black dark:text-white leading-snug max-w-7xl pt-12 px-8 mx-auto "
       >
         <span className="text-secondary">Social Video Content</span> is the New Fuel to Fire Your Brand’s Organic Growth
       </motion.h2>

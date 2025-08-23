@@ -97,7 +97,9 @@ export default function ProcessSteps() {
               style={{ scrollSnapAlign: 'center' }}
             >
               {/* Step Image/Color Block */}
-              <div className={`w-[80vw] sm:w-[320px] h-[220px] sm:h-[320px] lg:w-[320px] lg:h-[320px] ${step.color} rounded-lg flex-shrink-0 lg:mb-0 custom-process` } />
+              <div className={`w-[80vw] sm:w-[320px] h-[220px] sm:h-[320px] lg:w-[320px] lg:h-[320px] ${step.color} rounded-lg flex-shrink-0 lg:mb-0 custom-process` } >
+                <p className="hidden bg-white  p-1 h-8 w-8 text-primary text-center m-2 rounded-md font-extrabold custom-processBlockno" >{idx+1}</p>
+              </div>
               {/* Step Content */}
               <div className="flex flex-col justify-center items-start max-w-xl px-2 ">
                 <h3 className="text-black dark:text-white text-2xl sm:text-3xl font-extrabold mb-2">{step.title}</h3>

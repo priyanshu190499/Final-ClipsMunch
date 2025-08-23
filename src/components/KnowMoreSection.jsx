@@ -71,19 +71,20 @@ export default function KnowMoreSection() {
 
   return (
     <section className="bg-neutral dark:bg-black text-black dark:text-white ">
-      <div className="mx-auto flex flex-col gap-8 md:flex-row items-stretch ">
+      <div className="mx-auto flex flex-col md:flex-row items-stretch ">
         {/* Left - Text + Tabs + Accordion */}
-        <div className="w-full md:w-2/3 py-10  flex flex-col gap-6  px-8">
+        <div className="w-full md:w-2/3 ">
+          <div className=" pt-16  flex flex-col gap-6  px-8  max-w-3xl mx-auto ">
 
-        <div className="flex flex-col gap-6  lg:flex-row ">
-          <h2 className="text-3xl font-bold mb-2">Know More!</h2>
+        <div className="flex flex-col justify-between lg:flex-row ">
+          <h2 className="text-2xl font-bold mb-2">Know More!</h2>
 
           {/* Tabs */}
-          <div className="flex flex-wrap gap-3 mb-2 ">
+          <div className="flex flex-wrap gap-3 mb-2">
             {tabs.map((tab) => (
               <button
                 key={tab}
-                className={`custom-tabs px-8 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+                className={`custom-tabs px-6 py-1 rounded-full text-sm font-semibold transition-all duration-200 ${
                   activeTab === tab
                     ? "bg-secondary text-white shadow"
                     : "bg-gradient-to-r from-[#7c0e0e] to-[#f22929] text-white dark:bg-neutral-800 dark:text-white"
@@ -127,6 +128,7 @@ export default function KnowMoreSection() {
               </div>
             ))}
           </div>
+        </div>
         </div>
 
         {/* Right - Image */}

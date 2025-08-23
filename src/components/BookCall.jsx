@@ -22,8 +22,8 @@ export default function BookCall() {
 
   
   return (
-    <section className="bg-gradient-to-b from-primary to-secondary py-12 px-4 md:px-10 text-white">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-12">
+    <section className="bg-gradient-to-b from-primary to-secondary py-16 px-4 md:px-10 text-white">
+      <h2 className="text-xl md:text-4xl font-extrabold text-center mb-12">
         Why You Should Book the Call?
       </h2>
 

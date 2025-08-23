@@ -49,7 +49,7 @@ const subscriptionData = [
 export default function Subscription() {
   return (
     <section className="bg-gradient-to-b from-[#7c0e0e] to-[#f22929] py-12 px-8 md:px-10 text-center">
-      <h2 className="text-2xl md:text-4xl font-bold text-white mb-12">
+      <h2 className="text-xl md:text-4xl font-extrabold text-white mb-12">
         Who’s This <span className="italic underline">Subscription For</span>
       </h2>
 

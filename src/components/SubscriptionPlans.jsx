@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function SubscriptionPlans() {
   const plans = [
@@ -84,17 +85,89 @@ export default function SubscriptionPlans() {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className="bg-neutral dark:bg-black text-black dark:text-white py-20">
+    <section className="bg-neutral dark:bg-black text-black dark:text-white pt-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-red-500 font-semibold">// Our Subscriptions Plans</p>
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-xl md:text-4xl font-extrabold">
             Choose The <span className="text-red-600">Right Plan</span> For Your Business
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Carousel for small screens */}
+        <div className="block sm:hidden relative">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+            {plans.map((plan, idx) => (
+              <motion.div
+                key={idx}
+                className="min-w-full snap-center bg-gradient-to-b from-red-500 to-red-700 
+                           text-white rounded-xl flex flex-col justify-between shadow-md"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, delay: 0.1 + idx * 0.12 }}
+                onViewportEnter={() => setActiveIndex(idx)}
+              >
+                <div>
+                  <div className="p-8">
+                    <span className="text-xs font-bold bg-white text-secondary px-4 py-1 
+                                     rounded-bl-2xl rounded-tr-2xl border border-gray-500 
+                                     inline-block mb-2 uppercase tracking-wide">
+                      {plan.tag}
+                    </span>
+                    <h3 className="text-2xl font-bold">{plan.title}</h3>
+                    <div className="mt-8">
+                      <p className="text-3xl font-extralight">FROM</p>
+                      <p className="text-5xl font-bold">
+                        {plan.price}{" "}
+                        <span className="text-sm font-medium">{plan.frequency}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 bg-white text-sm text-black font-semibold text-center py-2 
+                                  border border-primary shadow-primary">
+                    {plan.requests}
+                  </div>
+                  <div className="p-8">
+                    <ul className="mt-6 space-y-3 text-sm text-white">
+                      {plan.features.map((feat, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-1 text-red-200">•</span>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="p-1 mt-auto rounded-b-xl">
+                  <button className="w-full py-4 text-xl text-secondary text-center font-bold 
+                                     transition-colors rounded-b-xl bg-white">
+                    {plan.cta} →
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Tracking Dots */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {plans.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  activeIndex === idx ? "bg-red-600" : "bg-gray-600"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Grid for larger screens */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, idx) => (
             <motion.div
               key={idx}
@@ -102,25 +175,30 @@ export default function SubscriptionPlans() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: 0.1 + idx * 0.12 }}
-              className="bg-gradient-to-b from-red-500 to-red-700 text-white rounded-xl flex flex-col justify-between shadow-md h-full"
+              className="bg-gradient-to-b from-red-500 to-red-700 text-white rounded-xl 
+                         flex flex-col justify-between shadow-md h-full"
             >
               <div>
                 <div className="p-8">
-                  <span className="text-xs font-bold bg-white text-secondary px-4 py-1 rounded-bl-2xl rounded-tr-2xl border border-gray-500 inline-block mb-2 uppercase tracking-wide">
+                  <span className="text-xs font-bold bg-white text-secondary px-4 py-1 
+                                   rounded-bl-2xl rounded-tr-2xl border border-gray-500 
+                                   inline-block mb-2 uppercase tracking-wide">
                     {plan.tag}
                   </span>
                   <h3 className="text-2xl font-bold">{plan.title}</h3>
-                  <div className="mt-8 ">
+                  <div className="mt-8">
                     <p className="text-3xl font-extralight">FROM</p>
                     <p className="text-5xl font-bold">
-                      {plan.price} <span className="text-sm font-medium">{plan.frequency}</span>
+                      {plan.price}{" "}
+                      <span className="text-sm font-medium">{plan.frequency}</span>
                     </p>
                   </div>
                 </div>
-                <div className="mt-4 bg-white text-sm text-black font-semibold text-center py-2 border border-primary shadow-primary">
+                <div className="mt-4 bg-white text-sm text-black font-semibold text-center py-2 
+                                border border-primary shadow-primary">
                   {plan.requests}
                 </div>
-                <div className="p-8 ">
+                <div className="p-8">
                   <ul className="mt-6 space-y-3 text-sm text-white">
                     {plan.features.map((feat, i) => (
                       <li key={i} className="flex items-start gap-2">
@@ -132,9 +210,8 @@ export default function SubscriptionPlans() {
                 </div>
               </div>
               <div className="p-1 mt-auto rounded-b-xl">
-                <button
-                  className="w-full py-4 text-xl text-secondary text-center font-bold transition-colors rounded-b-xl bg-white"
-                >
+                <button className="w-full py-4 text-xl text-secondary text-center font-bold 
+                                   transition-colors rounded-b-xl bg-white">
                   {plan.cta} →
                 </button>
               </div>

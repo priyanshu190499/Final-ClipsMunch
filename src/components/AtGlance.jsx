@@ -18,7 +18,7 @@ export default function AtGlance() {
         transition={{ duration: 0.7, delay: 0.2 }}
         className="text-2xl md:text-4xl font-extrabold text-center mb-14"
       >
-        <span className="text-secondary text-2xl md:text-4xl font-extrabold">ClipsMunch</span> at Glance
+        <span className="text-secondary text-xl md:text-4xl font-extrabold">ClipsMunch</span> at Glance
       </motion.h2>
 
       {/* Bento Grid - Flex Format */}

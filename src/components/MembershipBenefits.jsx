@@ -40,7 +40,7 @@ export default function MembershipBenefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-2xl md:text-4xl font-extrabold text-center mb-8 sm:mb-12 text-black dark:text-white"
+          className="text-xl md:text-4xl font-extrabold text-center mb-8 sm:mb-12 text-black dark:text-white"
         >
           Membership <span className="text-primary">Benefits</span>
         </motion.h2>

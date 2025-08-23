@@ -28,16 +28,21 @@ export default function Footer() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <footer className="bg-gray-800 text-white pt-20">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-start gap-12">
+    <footer className="bg-gray-800 text-white pt-16 ">
+      <div className="max-w-7xl mx-auto px-4 md:px-4 flex flex-col lg:flex-row justify-between items-start gap-12 ">
         {/* Logo */}
-        <div className="flex justify-center lg:justify-start w-full lg:w-auto mb-8 lg:mb-0">
+        <div className="flex flex-col  justify-center items-center lg:items-start  gap-4 lg:justify-start w-full lg:w-auto mb-8 lg:mb-0 ">
           <img
             src={logoLight}
             alt="ClipMunch Logo"
-            className="h-20 w-auto"
+            className="h-20 w-60"
             draggable="false"
           />
+           <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md mx-auto ">
+          We enable creators and businesses to repurpose video content easily. From AI-powered
+          customization to optimized short-form clips and more features yet to come.
+        </p>
+       
         </div>
 
         {/* Footer Sections */}

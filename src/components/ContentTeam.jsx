@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const ContentTeam = () => {
   return (
     <motion.section
-      className="py-12 px-4 bg-neutral dark:bg-black text-black dark:text-white transition-colors duration-300"
+      className="py-16 px-4 bg-neutral dark:bg-black text-black dark:text-white transition-colors duration-300"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -15,7 +15,7 @@ const ContentTeam = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-2xl md:text-4xl font-bold"
+          className="text-xl md:text-4xl font-extrabold"
         >
           <span className="text-primary">Build Your In-House Content Team</span>
           <br />

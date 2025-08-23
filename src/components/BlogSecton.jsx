@@ -29,10 +29,10 @@ const blogs = [
 
 export default function BlogsSection() {
   return (
-    <section className="bg-neutral dark:bg-black text-black py-20">
+    <section className="bg-neutral dark:bg-black text-black py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center mb-10 text-black dark:text-white">
+        <h2 className="text-xl md:text-4xl font-extrabold text-center mb-10 text-black dark:text-white">
           <span className="text-red-600">Read Our</span> Blogs
         </h2>
 
