@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef  } from "react";
 
 export default function SubscriptionPlans() {
   const plans = [
@@ -85,7 +85,21 @@ export default function SubscriptionPlans() {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+   const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollRef = useRef(null);
+
+  const handleDotClick = (idx) => {
+    setActiveIndex(idx);
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const cardWidth = container.offsetWidth; // each card = full width on mobile
+      container.scrollTo({
+        left: cardWidth * idx,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="bg-neutral dark:bg-black text-black dark:text-white pt-16">
@@ -99,10 +113,18 @@ export default function SubscriptionPlans() {
 
         {/* Carousel for small screens */}
         <div className="block sm:hidden relative">
-          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+          <div 
+          ref={scrollRef}
+            className="flex gap-4 overflow-y-hidden overflow-x-auto snap-x snap-mandatory scrollbar-hide h-fit scroll-smooth"
+            onScroll={(e) => {
+              const container = e.target;
+              const idx = Math.round(container.scrollLeft / container.offsetWidth);
+              setActiveIndex(idx);
+            }}>
             {plans.map((plan, idx) => (
               <motion.div
                 key={idx}
+                
                 className="min-w-full snap-center bg-gradient-to-b from-red-500 to-red-700 
                            text-white rounded-xl flex flex-col justify-between shadow-md"
                 initial={{ opacity: 0, y: 40 }}
@@ -157,7 +179,7 @@ export default function SubscriptionPlans() {
             {plans.map((_, idx) => (
               <button
                 key={idx}
-                onClick={() => setActiveIndex(idx)}
+                onClick={() => handleDotClick(idx)}
                 className={`w-3 h-3 rounded-full transition-colors ${
                   activeIndex === idx ? "bg-red-600" : "bg-gray-600"
                 }`}

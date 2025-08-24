@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion, useMotionValue, useAnimationFrame } from "framer-motion"
+import { useState, useRef, useEffect } from 'react'
+import { motion } from "framer-motion"
 
 import bv1 from "../assets/bv1.avif"
 import bv2 from "../assets/bv2.jpeg"
@@ -50,27 +50,18 @@ const marqueeFeaturesData = [
 ]
 
 export default function FormatStyles() {
-  const [selectedVideo, setSelectedVideo] = useState(null)
-  const [paused, setPaused] = useState(false)
+    const [selectedVideo, setSelectedVideo] = useState(null)
+  const carouselRef = useRef(null)
+  const [width, setWidth] = useState(0)
 
-  // motion value for x
-  const x = useMotionValue(0)
-
-  // continuously move left unless paused
-  useAnimationFrame((t, delta) => {
-    if (!paused) {
-      const moveBy = (delta / 1000) * 60 // speed (px/sec)
-      x.set(x.get() - moveBy)
-
-      // reset when halfway through (because we doubled images)
-      if (x.get() <= -(images.length * 350)) {
-        x.set(0)
-      }
+  useEffect(() => {
+    if (carouselRef.current) {
+      setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth)
     }
-  })
+  }, [])
 
   return (
-    <motion.section
+     <motion.section
       className="bg-neutral dark:bg-black text-center pt-12 transition-colors relative"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -88,37 +79,34 @@ export default function FormatStyles() {
         <span className="text-secondary">Our Clients Shared Their Love</span> For Our Work
       </motion.h2>
 
-       {/* 🔥 Continuous Loop Image Carousel */}
+        {/* 🔥 Swipeable Image Carousel */}
+<div 
+  className="mt-10 mx-8 overflow-x-auto scrollbar-hide" 
+  ref={carouselRef}
+>
+  <div className="flex gap-8 snap-x snap-mandatory">
+    {images.map((src, i) => (
       <div
-        className="mt-10 overflow-hidden mx-8"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
+        key={i}
+        className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0 relative cursor-pointer snap-center"
+        onClick={() => setSelectedVideo(videos[i % videos.length])}
       >
-        <motion.div
-          className="flex gap-8 custom-videos-marquee"
-          style={{ x }}
-        >
-          {[...images, ...images].map((src, i) => (
-            <div
-              key={i}
-              className="w-[88vw] sm:w-[40vw] md:w-[20vw] flex-shrink-0 relative cursor-pointer "
-              onClick={() => setSelectedVideo(videos[i % videos.length])}
-            >
-              <img
-                src={src}
-                alt={`Format style ${i + 1}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-              {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-14 h-14 bg-primary/90 rounded-full flex items-center justify-center">
-                  <div className="w-0 h-0 border-l-[18px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1" />
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+        <img
+          src={src}
+          alt={`Format style ${i + 1}`}
+          className="w-full h-full object-cover rounded-lg"
+        />
+        {/* Play Button Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-14 h-14 bg-primary/90 rounded-full flex items-center justify-center">
+            <div className="w-0 h-0 border-l-[18px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1" />
+          </div>
+        </div>
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Title 2 */}
       <motion.h2
@@ -156,33 +144,32 @@ export default function FormatStyles() {
       </div>
 
       {/* Marquee */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
-  transition={{ duration: 0.7, delay: 1.2 }}
-  className="mt-12 overflow-hidden whitespace-nowrap py-2 bg-primary"
->
-  <motion.div
-    className="inline-flex text-white font-semibold text-2xl"
-    animate={{ x: ["0%", "-50%"] }} // shift half the content left
-    transition={{
-      duration: 25, // tweak speed here
-      ease: "linear",
-      repeat: Infinity,
-    }}
-  >
-    {[...marqueeFeaturesData, ...marqueeFeaturesData, ...marqueeFeaturesData, ...marqueeFeaturesData].map((item, i) => (
-      <span key={i} className="inline-flex items-center gap-3 mx-4">
-        <span className="px-4 py-2 rounded-full">{item}</span>
-        {i !== marqueeFeaturesData.length * 4 - 1 && (
-          <span className="w-6 h-6 bg-white rounded-full" />
-        )}
-      </span>
-    ))}
-  </motion.div>
-</motion.div>
-
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, delay: 1.2 }}
+        className="mt-12 overflow-hidden whitespace-nowrap py-2 bg-primary"
+      >
+        <motion.div
+          className="inline-flex text-white font-semibold text-2xl"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {[...marqueeFeaturesData, ...marqueeFeaturesData, ...marqueeFeaturesData, ...marqueeFeaturesData].map((item, i) => (
+            <span key={i} className="inline-flex items-center gap-3 mx-4">
+              <span className="px-4 py-2 rounded-full">{item}</span>
+              {i !== marqueeFeaturesData.length * 4 - 1 && (
+                <span className="w-6 h-6 bg-white rounded-full" />
+              )}
+            </span>
+          ))}
+        </motion.div>
+      </motion.div>
 
       {/* Popup Video Modal */}
       {selectedVideo && (
