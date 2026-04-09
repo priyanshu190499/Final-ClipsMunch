@@ -133,19 +133,19 @@ export default function Footer() {
          {/* Social Icons */}
 <div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
   <a
-    href="Instagram.com/clipsmunch"
+    href="https://www.instagram.com/clipsmunch"
     className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
   >
     <FaInstagram className="w-6 h-6" />
   </a>
   <a
-    href="LinkedIn.com/company/clipsmunch"
+    href="https://www.linkedin.com/company/clipsmunch/"
     className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
   >
     <FaLinkedin className="w-6 h-6"/>
   </a>
   <a
-    href="Facebook.com/clipsmunch"
+    href="https://www.facebook.com/ClipsMunch/"
     className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
   >
     <FaFacebook className="w-6 h-6"/>
