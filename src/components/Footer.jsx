@@ -1,5 +1,9 @@
 import { useState } from "react";
+import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa6";
 import logoLight from "../assets/MUNCH_WHITE.png";
+import inflag from "../assets/in.png";
+import ukflag from "../assets/gb.png";
+import caflag from "../assets/ca.png";
 
 const footerSections = [
   {
@@ -42,13 +46,41 @@ export default function Footer() {
           We enable creators and businesses to repurpose video content easily. From AI-powered
           customization to optimized short-form clips and more features yet to come.
         </p>
+
+        {/* Flag and contact number */}
+        <div className="flex flex-col gap-2 mt-4 lg:mt-0 w-full">
+      <div className="flex items-center gap-2">
+        <img 
+          src={inflag}
+          alt="India Flag"
+          className="w-6 h-4 flex-shrink-0 rounded-sm"
+        />
+        <span className="text-gray-300 text-sm">+91-7982931673</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <img 
+          src={ukflag}
+          alt="UK Flag"
+          className="w-6 h-4 flex-shrink-0 rounded-sm"
+        />
+        <span className="text-gray-300 text-sm">+44-7405 293392</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <img 
+          src={caflag}
+          alt="Canada Flag"
+          className="w-6 h-4 flex-shrink-0 rounded-sm"
+        />
+        <span className="text-gray-300 text-sm">+1-289 632-2786</span>
+      </div>
+    </div>
        
         </div>
 
         {/* Footer Sections */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:gap-12 w-full lg:w-auto text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:gap-6 w-full lg:w-auto text-sm">
           {footerSections.map((section, index) => (
-            <div key={index} className="mb-6 lg:mb-0">
+            <div key={index} className="mb-6 lg:mb-0 ">
               {/* Accordion for small screens */}
               <div className="lg:hidden border-b border-gray-700">
                 <button
@@ -98,18 +130,28 @@ export default function Footer() {
             © 2025, ClipsMunch | Socially Flipped Media Pvt. Ltd.
           </p>
 
-          {/* Social Icons */}
-          <div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
-            {["instagram", "facebook", "twitter"].map((platform) => (
-              <a
-                key={platform}
-                href="#"
-                className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black"
-              >
-                <i className={`fab fa-${platform}`} />
-              </a>
-            ))}
-          </div>
+         {/* Social Icons */}
+<div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
+  <a
+    href="Instagram.com/clipsmunch"
+    className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
+  >
+    <FaInstagram className="w-6 h-6" />
+  </a>
+  <a
+    href="LinkedIn.com/company/clipsmunch"
+    className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
+  >
+    <FaLinkedin className="w-6 h-6"/>
+  </a>
+  <a
+    href="Facebook.com/clipsmunch"
+    className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
+  >
+    <FaFacebook className="w-6 h-6"/>
+  </a>
+</div>
+
         </div>
       </div>
     </footer>

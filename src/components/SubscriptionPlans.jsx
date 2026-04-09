@@ -127,11 +127,7 @@ export default function SubscriptionPlans() {
                 
                 className="min-w-full snap-center bg-gradient-to-b from-red-500 to-red-700 
                            text-white rounded-xl flex flex-col justify-between shadow-md"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7, delay: 0.1 + idx * 0.12 }}
-                onViewportEnter={() => setActiveIndex(idx)}
+                
               >
                 <div>
                   <div className="p-8">

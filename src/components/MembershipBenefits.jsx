@@ -84,7 +84,8 @@ export default function MembershipBenefits() {
                               : 'border-black dark:border-white text-black dark:text-white'}
                           `}
                         >
-                          ♥
+                          <div className="text-2xl sm:text-6xl mp-2">♥</div>
+                          
                         </div>
                       </div>
                     </div>

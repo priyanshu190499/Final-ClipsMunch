@@ -30,9 +30,6 @@ export default function Home({ openPopup }) {
       <BookCall/>
       <KnowMoreSection/>
       <BlogsSection/>
-      
-      
-     
     </main>
   )
 }
