@@ -134,18 +134,24 @@ export default function Footer() {
 <div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
   <a
     href="https://www.instagram.com/clipsmunch"
+    target="_blank"
+    rel="noopener noreferrer"
     className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
   >
     <FaInstagram className="w-6 h-6" />
   </a>
   <a
     href="https://www.linkedin.com/company/clipsmunch/"
+    target="_blank"
+    rel="noopener noreferrer"
     className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
   >
     <FaLinkedin className="w-6 h-6"/>
   </a>
   <a
     href="https://www.facebook.com/ClipsMunch/"
+    target="_blank"
+    rel="noopener noreferrer"
     className="w-8 h-8 bg-[#f4f4f4] rounded flex items-center justify-center text-black hover:bg-white hover:scale-110 transition-all duration-200"
   >
     <FaFacebook className="w-6 h-6"/>
